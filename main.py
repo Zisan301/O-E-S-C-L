@@ -17,7 +17,7 @@ from src.oescl.utils import set_global_seed, ensure_dir
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="O-E-S-C-L conference-level reproducible simulation pipeline."
+        description="O-E-S-C-L conference/IEEE-Optica simulation pipeline."
     )
     parser.add_argument(
         "--config",
@@ -29,8 +29,8 @@ def parse_args() -> argparse.Namespace:
         "--mode",
         type=str,
         default="full",
-        choices=["smoke", "full"],
-        help="Run a quick smoke test or full reproducible simulation.",
+        choices=["smoke", "full", "day1", "day2"],
+        help="Run smoke, full, Day-1, or Day-2 IEEE/Optica upgrade experiments.",
     )
     return parser.parse_args()
 
@@ -42,6 +42,29 @@ def main() -> None:
 
     output_dir = Path(cfg["output"]["root"])
     ensure_dir(output_dir)
+
+    if args.mode == "day1":
+        from src.oescl.day1 import run_day1_ieee_optica_upgrade
+
+        day1_bundle = run_day1_ieee_optica_upgrade(cfg=cfg)
+        print("\nO-E-S-C-L Day-1 IEEE/Optica upgrade completed.")
+        print(f"Results root: {output_dir.resolve()}")
+        print(f"Day-1 report: {Path(day1_bundle['report_path']).resolve()}")
+        print(f"Day-1 LaTeX snippet: {Path(day1_bundle['latex_snippet_path']).resolve()}")
+        return
+
+    if args.mode == "day2":
+        from src.oescl.day2 import run_day2_ieee_optica_upgrade
+
+        day2_bundle = run_day2_ieee_optica_upgrade(cfg=cfg)
+        print("\nO-E-S-C-L Day-2 IEEE/Optica upgrade completed.")
+        print(f"Results root: {output_dir.resolve()}")
+        print(f"Day-2 report: {Path(day2_bundle['report_path']).resolve()}")
+        print(f"Day-2 LaTeX snippet: {Path(day2_bundle['latex_snippet_path']).resolve()}")
+        print("\nGenerated Day-2 figures:")
+        for p in day2_bundle["figure_paths"]:
+            print(f"- {Path(p).resolve()}")
+        return
 
     result_bundle = run_experiment(cfg=cfg, mode=args.mode)
     validation = validate_results(result_bundle=result_bundle, cfg=cfg)

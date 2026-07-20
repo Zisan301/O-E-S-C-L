@@ -1,0 +1,27 @@
+% Paste this into the improved Results section after Day-2 completion.
+
+\subsection{PCS-Tuning and Span-Count Stress Evaluation}
+The Day-2 experiment extends the initial launch-power sweep by adding a PCS shaping-coefficient sweep and a span-count sweep. This experiment is designed to expose the operating region in which shaping and neural residual compensation are useful, rather than evaluating only a single high-SNR point.
+
+The best proposed operating point by the combined validation score occurs at 6 spans, -2.0 dBm launch power, and PCS shaping coefficient $\nu=0.00$. At this point, the proposed method obtains an estimated rate of 6.4000$\pm$0.0000 Tb/s, GSNR of 21.82$\pm$0.08 dB, and mean BER of 7.937e-06.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day2_pcs_nu_rate.png}
+\caption{Estimated net rate versus PCS shaping coefficient under the selected span and launch-power conditions.}
+\label{fig:day2_nu_rate}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day2_pcs_nu_ber.png}
+\caption{Estimated BER versus PCS shaping coefficient on a logarithmic scale.}
+\label{fig:day2_nu_ber}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day2_best_nu_heatmap.png}
+\caption{Best PCS shaping coefficient selected over span count and launch power.}
+\label{fig:day2_best_nu}
+\end{figure}

@@ -1,0 +1,13 @@
+{
+  "package": "O-E-S-C-L Day-1 IEEE/Optica upgrade patch",
+  "new_or_modified_files": [
+    "main.py",
+    "config/day1_ieee_optica_config.yaml",
+    "src/oescl/day1.py",
+    "src/oescl/day1_plots.py",
+    "scripts/run_day1_ieee_optica.bat",
+    "scripts/run_day1_ieee_optica.sh",
+    "DAY1_README.md"
+  ],
+  "run_command": "python main.py --config config/day1_ieee_optica_config.yaml --mode day1"
+}

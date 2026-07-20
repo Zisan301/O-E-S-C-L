@@ -1,0 +1,23 @@
+Day 1:
+Fix system diagram
+Fix figures
+Add launch-power sweep
+Add multi-seed runs
+
+Day 2:
+Add span-count sweep
+Add PCS-nu sweep
+Add confidence intervals
+Add improved tables
+
+Day 3:
+Rewrite Results section
+Rewrite Abstract and Contributions
+Add Reproducibility section
+Polish references and formatting
+
+Day 4:
+Run plagiarism check
+Run grammar check
+Check IEEE/Optica template
+Submit only if results show clear trend

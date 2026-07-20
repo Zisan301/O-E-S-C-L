@@ -1,0 +1,26 @@
+% Paste this into the improved IEEE/Optica Results section after running Day-1 mode.
+\subsection{Launch-Power Sweep With Multi-Seed Confidence Intervals}
+To avoid the saturation observed in the initial single-run experiment, the Day-1 upgrade evaluates the four ablation scenarios across a launch-power grid using five independent random seeds. For each launch-power point, the reported value is the mean over seeds, and the error bar denotes the 95\% confidence interval.
+
+Fig.~\ref{fig:day1_gsnr_sweep} shows the resulting GSNR trend. The proposed PCS + neural residual-compensation configuration reaches its highest mean GSNR of 22.98$\pm$0.04 dB at -6.0 dBm. Unlike the initial single-run result, this sweep is more suitable for conference review because it exposes operating-region dependence rather than reporting one saturated point.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day1_launch_power_gsnr.png}
+\caption{Launch-power sweep of mean GSNR with 95\% confidence intervals over five random seeds.}
+\label{fig:day1_gsnr_sweep}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day1_launch_power_ber_log.png}
+\caption{Launch-power sweep of estimated pre-FEC BER on a logarithmic scale.}
+\label{fig:day1_ber_sweep}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig_day1_launch_power_rate.png}
+\caption{Launch-power sweep of estimated total net achievable rate with 95\% confidence intervals.}
+\label{fig:day1_rate_sweep}
+\end{figure}

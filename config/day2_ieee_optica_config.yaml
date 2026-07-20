@@ -1,0 +1,107 @@
+project:
+  name: "O-E-S-C-L"
+  paper_title: "Ablation-Driven Evaluation of Probabilistic Shaping and Lightweight Neural Residual Compensation for Multi-Band O/E/S/C/L Optical Links"
+
+simulation:
+  seed: 42
+  spans: 6
+  span_length_km: 80.0
+  baud_rate_gbaud: 64.0
+  channel_spacing_ghz: 75.0
+  modulation: "16QAM"
+  symbols_per_channel_full: 12000
+  symbols_per_channel_smoke: 1500
+  n_channels_per_band_full: 9
+  n_channels_per_band_smoke: 3
+  launch_power_dbm_grid: [-6.0, -4.0, -2.0, 0.0, 2.0, 4.0]
+  default_launch_power_dbm: 0.0
+
+day2:
+  # Full Day-2 sweep. This is much stronger than Day-1, but still runnable on a normal laptop.
+  seeds: [1, 2, 3]
+  span_grid: [6, 8, 10, 12]
+  launch_power_dbm_grid: [-2.0, 0.0, 2.0, 4.0, 6.0]
+  pcs_nu_grid: [0.00, 0.06, 0.12, 0.18, 0.24, 0.30]
+  symbols_per_channel: 3500
+  channels_per_band: 3
+
+  # Stress multipliers intentionally push the system away from saturated BER/NGMI.
+  stress_noise_scale: 5.50
+  stress_nli_scale: 8.50
+  stress_implementation_scale: 2.80
+
+  # To keep runtime practical, neural compensation is evaluated on representative candidate points,
+  # while the PCS-nu grid is swept first using non-neural scenarios.
+  neural_candidate_top_k: 12
+  find_best_by: "score"
+
+  # Scoring weights for best operating point selection.
+  score_rate_weight: 1.00
+  score_gsnr_weight: 0.04
+  score_ber_penalty: 15.0
+
+bands:
+  O:
+    center_nm: 1310.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.32
+    dispersion_ps_nm_km: 0.0
+    noise_figure_db: 6.0
+  E:
+    center_nm: 1400.0
+    bandwidth_thz: 8.0
+    attenuation_db_per_km: 0.28
+    dispersion_ps_nm_km: 2.0
+    noise_figure_db: 5.8
+  S:
+    center_nm: 1490.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.22
+    dispersion_ps_nm_km: 8.0
+    noise_figure_db: 5.5
+  C:
+    center_nm: 1550.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.19
+    dispersion_ps_nm_km: 16.7
+    noise_figure_db: 5.0
+  L:
+    center_nm: 1605.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.21
+    dispersion_ps_nm_km: 20.0
+    noise_figure_db: 5.3
+
+fiber:
+  gamma_w_inv_km: 1.25
+  nonlinear_eta_base: 1.15e-3
+  polarization_modes: 2
+  implementation_margin_db: 1.0
+
+pcs:
+  enabled: true
+  shaping_nu: 0.18
+  entropy_bits_per_symbol: 3.65
+
+neural_nli:
+  enabled: true
+  hidden_layer_sizes: [32, 16]
+  max_iter_full: 120
+  max_iter_smoke: 60
+  max_iter_day2: 100
+  alpha: 0.0001
+  training_fraction: 0.55
+  random_state: 42
+
+validation:
+  max_reasonable_total_rate_tbps: 250.0
+  min_valid_ngmi: 0.55
+  max_valid_ber: 0.25
+  require_finite_metrics: true
+
+output:
+  root: "results"
+  figures: "results/figures"
+  tables: "results/tables"
+  reports: "results/reports"
+  models: "results/models"
