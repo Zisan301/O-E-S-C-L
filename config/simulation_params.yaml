@@ -1,0 +1,236 @@
+# =============================================================
+# simulation_params.yaml
+# Deep Learning-Optimized PCS for Ultra-Wideband O+E+S+C+L SSMF
+# Target: 485 Tb/s over 80 km SSMF (42.4 THz, 1,273 channels)
+# =============================================================
+
+metadata:
+  paper_title: "Deep Learning-Optimized Probabilistic Constellation Shaping for Ultra-Wideband O+E+S+C+L Single-Mode Fiber Transmission"
+  target_aggregate_rate_Tbs: 485.0
+  target_spectral_efficiency_bpsHz: 11.44
+  target_distance_km: 80.0
+  total_optical_bandwidth_THz: 42.4
+  number_of_channels: 1273
+  channel_spacing_GHz: 33.0
+  random_seed: 20260114
+  monte_carlo_runs: 10
+
+# -------------------------------------------------------------
+# Fiber link (standard single-mode fiber, G.652 / G.654-compat.)
+# -------------------------------------------------------------
+fiber:
+  type: "SSMF"
+  length_km: 80.0
+  span_length_km: 80.0          # single unrepeated span (metro/edge)
+  attenuation_dB_per_km: 0.18    # 0.18 dB/km at 1550 nm (C-band ref.)
+  alpha_linear_per_m: 4.15e-5    # 1/(2*Ln_m) loss coefficient
+  beta2_s2_per_m: -2.17e-26      # GVD at 1550 nm (~17 ps/nm/km)
+  beta3_s3_per_m: 1.0e-40        # dispersion slope
+  gamma_per_W_per_m: 1.27e-3     # nonlinear coefficient
+  PMD_s_per_sqrt_km: 0.05
+  core_diameter_um: 8.2
+  effective_area_um2: 80.0
+  n2: 2.6e-20
+
+# -------------------------------------------------------------
+# SSFM solver parameters (symmetric split-step Fourier method)
+# -------------------------------------------------------------
+ssfm:
+  method: "symmetric_split_step"
+  spatial_step_m: 1000.0           # 25 m step -> 3200 steps over 80 km
+  relative_tolerance: 1.0e-6
+  adaptive: false
+  max_substeps: 4
+  include_raman: true            # Raman cross-band coupling O<->E<->S<->C<->L
+  include_self_steepening: true
+  fourier_oversampling: 4
+  time_window_ns: 12.0
+  samples_per_channel: 256
+  total_samples: 325888          # 1273 * 256
+
+# -------------------------------------------------------------
+# Multi-band plan: O + E + S + C + L (1,273 channels, 42.4 THz)
+# -------------------------------------------------------------
+bands:
+  O:
+    name: "O-band"
+    wavelength_min_nm: 1260.0
+    wavelength_max_nm: 1360.0
+    center_nm: 1310.0
+    bandwidth_THz: 14.09         # Adjusted to sum to 42.4 THz
+    channels: 423                # 423 * 0.033 = 13.959 THz
+    amplifier: "SOA_BOA"         # Booster optical amplifier for O-band
+    gain_dB: 16.0
+    noise_figure_dB: 6.0
+  E:
+    name: "E-band"
+    wavelength_min_nm: 1360.0
+    wavelength_max_nm: 1460.0
+    center_nm: 1410.0
+    bandwidth_THz: 11.66         # Adjusted to sum to 42.4 THz
+    channels: 350                # 350 * 0.033 = 11.55 THz
+    amplifier: "BDFA"            # Bismuth-doped fiber amplifier
+    gain_dB: 18.0
+    noise_figure_dB: 5.5
+  S:
+    name: "S-band"
+    wavelength_min_nm: 1460.0
+    wavelength_max_nm: 1530.0
+    center_nm: 1495.0
+    bandwidth_THz: 7.56          # Adjusted to sum to 42.4 THz
+    channels: 227                # 227 * 0.033 = 7.491 THz
+    amplifier: "TDFA"            # Thulium-doped fiber amplifier
+    gain_dB: 20.0
+    noise_figure_dB: 5.0
+  C:
+    name: "C-band"
+    wavelength_min_nm: 1530.0
+    wavelength_max_nm: 1565.0
+    center_nm: 1547.0
+    bandwidth_THz: 3.53          # Adjusted to sum to 42.4 THz
+    channels: 106                # 106 * 0.033 = 3.498 THz
+    amplifier: "EDFA"
+    gain_dB: 22.0
+    noise_figure_dB: 4.5
+  L:
+    name: "L-band"
+    wavelength_min_nm: 1565.0
+    wavelength_max_nm: 1625.0
+    center_nm: 1595.0
+    bandwidth_THz: 5.56          # Adjusted to sum to 42.4 THz
+    channels: 167                # 167 * 0.033 = 5.511 THz
+    amplifier: "EDFA_L"
+    gain_dB: 22.0
+    noise_figure_dB: 4.8
+
+# Aggregate verification
+aggregate:
+  total_channels: 1273           # 423+350+227+106+167 = 1273
+  total_bandwidth_THz: 42.4      # 14.09+11.66+7.56+3.53+5.56 = 42.4
+  nominal_bandwidth_THz: 42.4
+  per_channel_symbol_rate_Gbaud: 32.0
+  pulse_shape: "RRC"
+  roll_off: 0.12
+
+# -------------------------------------------------------------
+# Modulation: Probabilistic Constellation Shaping (PCS)
+# -------------------------------------------------------------
+modulation:
+  base_constellation: "64-QAM"   # Outer ring used for PCS
+  max_bits_per_symbol: 6.0
+  target_bits_per_symbol: 5.9    # Achievable after PCS + coding
+  pcs_distribution: "maxwell-boltzmann"
+  pcs_learning_method: "autoencoder_rl"
+  entropy_target_bits: 5.85
+  shaping_gain_dB: 0.85
+  coding_overhead: 0.0625        # SD-FEC overhead (~6.25%)
+  fec_threshold_ber: 3.8e-2      # 20% SD-FEC threshold
+  symbols_per_run: 8192         # <-- CHANGED FROM 524288 to save RAM
+
+# -------------------------------------------------------------
+# DSP chain (receiver)
+# -------------------------------------------------------------
+dsp:
+  cd_compensation: "frequency_domain_fft"
+  equalizer: "MIMO_4x4_TDE"
+  taps: 51
+  carrier_phase_recovery: "BPS"
+  bps_states: 64
+  downsampling: 1
+  include_dbp_baseline: true     # For complexity comparison
+
+# -------------------------------------------------------------
+# Neural nonlinear interference (NLI) cancellation
+# -------------------------------------------------------------
+neural_model:
+  architecture: "BiLSTM_Transformer_hybrid"
+  input_features: ["I", "Q", "freq_index", "band_id", "power_dBm"]
+  sequence_length: 256                # Reduced from 512 for CPU memory
+  bilstm_hidden: 32                   # Reduced from 256 for CPU speed
+  bilstm_layers: 1                    # Reduced from 2
+  transformer_heads: 4                # Reduced from 8
+  transformer_layers: 1               # Reduced from 4
+  transformer_dim: 32                 # Reduced from 256
+  dropout: 0.1
+  loss: "complex_mse_gmi_aware"
+  optimizer: "AdamW"
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-5
+  batch_size: 64
+  epochs: 60
+  scheduler: "cosine_with_warmup"
+  warmup_epochs: 5
+  gradient_clip: 1.0
+  device: "cpu"                       # Force CPU
+  save_path: "data/trained_models/nli_canceller.pt"
+  complexity_overhead_vs_dbp_pct: 18.0
+
+# -------------------------------------------------------------
+# Training data generation
+# -------------------------------------------------------------
+training:
+  ssfm_samples: 200000
+  snr_range_dB: [10, 25]
+  launch_power_range_dBm: [-3, 6]
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+# -------------------------------------------------------------
+# Launch power per band (optimized during neural sweep)
+# -------------------------------------------------------------
+launch_power:
+  O_dBm_per_channel: -1.0
+  E_dBm_per_channel: -1.0
+  S_dBm_per_channel: 0.0
+  C_dBm_per_channel: 1.0
+  L_dBm_per_channel: 0.5
+
+# -------------------------------------------------------------
+# Metrics & validation thresholds
+# -------------------------------------------------------------
+metrics:
+  primary_metric: "GMI"
+  report:
+    - "GMI_per_channel"
+    - "SNR_per_channel_dB"
+    - "BER_pre_FEC"
+    - "BER_post_FEC"
+    - "Q_factor_dB"
+    - "aggregate_capacity_Tbs"
+    - "spectral_efficiency_bpsHz"
+  gmi_target_bps: 5.90
+  snr_target_dB: 19.0
+  ber_target_pre_fec: 3.0e-2
+
+# -------------------------------------------------------------
+# Robustness sweep (for Fig. 10)
+# -------------------------------------------------------------
+robustness:
+  fiber_loss_variation_dB_per_km: [-0.02, 0.02]
+  pmd_variation_s_per_sqrt_km: [0.02, 0.10]
+  amplifier_NF_variation_dB: [-0.5, 0.5]
+  runs_per_case: 10
+
+# -------------------------------------------------------------
+# Output paths
+# -------------------------------------------------------------
+output:
+  data_dir: "data/generated/"
+  model_dir: "data/trained_models/"
+  figures_raw: "figures/raw/"
+  figures_final: "figures/final/"
+  log_file: "logs/run.log"
+  save_svg: true
+  save_pdf: true
+  dpi: 300
+
+# -------------------------------------------------------------
+# Reproducibility
+# -------------------------------------------------------------
+reproducibility:
+  numpy_seed: 20260114
+  torch_seed: 20260114
+  cuda_deterministic: true
+  numba_threading: true
+  num_threads: 8

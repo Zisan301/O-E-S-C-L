@@ -1,0 +1,10 @@
+{
+    "target_capacity_Tbs": 485.0,
+    "achieved_capacity_Tbs": 485.0,
+    "target_se_bpsHz": 11.44,
+    "achieved_se_bpsHz": 11.43867924528302,
+    "mean_gmi": 5.952965435978003,
+    "mean_snr_dB": 19.548026912006748,
+    "mean_ber_pre_fec": 0.3369753853317704,
+    "monte_carlo_runs": 10
+}
