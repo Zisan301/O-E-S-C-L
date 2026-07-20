@@ -1,0 +1,140 @@
+project:
+  name: "O-E-S-C-L"
+  paper_title: "Strict Waveform-Level SSFM Validation of Memory-Aware Neural Equalization and PCS for Multi-Band O/E/S/C/L Optical Links"
+
+simulation:
+  seed: 42
+  spans: 6
+  span_length_km: 80.0
+  baud_rate_gbaud: 64.0
+  channel_spacing_ghz: 75.0
+  modulation: "16QAM"
+  symbols_per_channel_full: 12000
+  symbols_per_channel_smoke: 1500
+  n_channels_per_band_full: 9
+  n_channels_per_band_smoke: 3
+  launch_power_dbm_grid: [-4.0, -2.0, 0.0, 2.0, 4.0]
+  default_launch_power_dbm: 0.0
+
+day5:
+  seed: 2026
+
+  # Still laptop-runnable, but stronger than Day-5 v1.
+  symbols: 6144
+  sanity_symbols: 2048
+  samples_per_symbol: 2
+  rrc_rolloff: 0.20
+  rrc_span_symbols: 8
+
+  waveform_spans: [6, 8, 10]
+  span_length_km: 80.0
+  ssfm_steps_per_span: 4
+  dispersion_scale: 0.040
+  nonlinear_scale: 0.030
+  receiver_cd_compensation: true
+  matched_filter: true
+  normalize_per_span: true
+
+  # Stronger stress grid. Day-5 v1 was still near saturation.
+  launch_power_grid: [-2.0, 0.0, 2.0, 4.0, 6.0]
+  stress_grid:
+    - {name: "medium_plus", noise: 0.030, nonlinear: 2.20, implementation: 0.0040, phase: 0.018}
+    - {name: "evidence",    noise: 0.055, nonlinear: 2.80, implementation: 0.0080, phase: 0.026}
+    - {name: "strong_plus", noise: 0.085, nonlinear: 3.40, implementation: 0.0120, phase: 0.034}
+    - {name: "edge_plus",   noise: 0.120, nonlinear: 4.20, implementation: 0.0180, phase: 0.044}
+    - {name: "near_limit",  noise: 0.160, nonlinear: 5.00, implementation: 0.0260, phase: 0.055}
+
+  # Strict non-saturated target region.
+  target_gmi_min: 2.60
+  target_gmi_max: 3.80
+  target_ber_min: 1.0e-4
+  target_ber_max: 8.0e-2
+  target_ngmi_min: 0.65
+  target_ngmi_max: 0.96
+
+  seeds: [1, 2, 3, 4, 5]
+  bands_to_run: ["C", "L", "S"]
+  pcs_nu_grid: [0.00, 0.08, 0.16, 0.24, 0.32]
+  compare_spans: [6, 8, 10]
+
+  memory_taps: 7
+  memory_hidden_layers: [96, 48]
+  memory_max_iter: 220
+  training_fraction: 0.60
+  neural_alpha: 0.0001
+
+  gmi_monte_carlo_limit: 30000
+  llr_noise_floor: 1.0e-5
+
+  # Strict acceptance gate.
+  min_gmi_gain_vs_best_baseline: 0.015
+  min_ngmi_gain_vs_best_baseline: 0.003
+  min_rate_gain_tbps_per_channel: 0.0010
+  max_allowed_ber: 8.0e-2
+  require_nonzero_pcs_win_for_pcs_claim: true
+
+bands:
+  O:
+    center_nm: 1310.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.32
+    dispersion_ps_nm_km: 0.0
+    noise_figure_db: 6.0
+  E:
+    center_nm: 1400.0
+    bandwidth_thz: 8.0
+    attenuation_db_per_km: 0.28
+    dispersion_ps_nm_km: 2.0
+    noise_figure_db: 5.8
+  S:
+    center_nm: 1490.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.22
+    dispersion_ps_nm_km: 8.0
+    noise_figure_db: 5.5
+  C:
+    center_nm: 1550.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.19
+    dispersion_ps_nm_km: 16.7
+    noise_figure_db: 5.0
+  L:
+    center_nm: 1605.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.21
+    dispersion_ps_nm_km: 20.0
+    noise_figure_db: 5.3
+
+fiber:
+  gamma_w_inv_km: 1.25
+  nonlinear_eta_base: 1.15e-3
+  polarization_modes: 2
+  implementation_margin_db: 1.0
+
+pcs:
+  enabled: true
+  shaping_nu: 0.18
+  entropy_bits_per_symbol: 3.65
+
+neural_nli:
+  enabled: true
+  hidden_layer_sizes: [32, 16]
+  max_iter_full: 120
+  max_iter_smoke: 60
+  max_iter_day2: 100
+  alpha: 0.0001
+  training_fraction: 0.55
+  random_state: 42
+
+validation:
+  max_reasonable_total_rate_tbps: 250.0
+  min_valid_ngmi: 0.45
+  max_valid_ber: 0.30
+  require_finite_metrics: true
+
+output:
+  root: "results"
+  figures: "results/figures"
+  tables: "results/tables"
+  reports: "results/reports"
+  models: "results/models"

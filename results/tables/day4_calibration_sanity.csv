@@ -1,0 +1,5 @@
+test,gmi,ngmi,ber,gsnr_db,rate_tbps,calibrated_noise_var,calibrated_gsnr_db,regime,spans,launch_power_dbm,band,total_steps,receiver_dispersion_compensation
+identity_no_impairment,4.0,1.0,0.0,47.90649276752148,0.4266666666666667,5.192307130067988e-32,150.0,easy,6,0.0,C,36,True
+linear_dispersion_only,4.0,1.0,0.0,47.906492767525954,0.4266666666666667,1.9123347355763284e-28,150.0,easy,6,0.0,C,36,True
+nonlinear_only,4.0,1.0,0.0,44.3625069444963,0.4266666666666667,2.042906917245553e-05,46.897514210560345,easy,6,0.0,C,36,True
+calibrated_easy,4.0,1.0,0.0,26.980163114570033,0.4266666666666667,0.001988235068221397,27.015322704436223,easy,6,0.0,C,36,True

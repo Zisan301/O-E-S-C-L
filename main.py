@@ -17,7 +17,7 @@ from src.oescl.utils import set_global_seed, ensure_dir
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="O-E-S-C-L conference/IEEE-Optica simulation pipeline."
+        description="O-E-S-C-L IEEE/Optica simulation pipeline."
     )
     parser.add_argument(
         "--config",
@@ -29,8 +29,8 @@ def parse_args() -> argparse.Namespace:
         "--mode",
         type=str,
         default="full",
-        choices=["smoke", "full", "day1", "day2"],
-        help="Run smoke, full, Day-1, or Day-2 IEEE/Optica upgrade experiments.",
+        choices=["smoke", "full", "day1", "day2", "day4", "day4cal", "day5", "day6"],
+        help="Run smoke, full, Day-1, Day-2, Day-4, Day-4 calibration, Day-5, or Day-6 experiments.",
     )
     return parser.parse_args()
 
@@ -45,24 +45,50 @@ def main() -> None:
 
     if args.mode == "day1":
         from src.oescl.day1 import run_day1_ieee_optica_upgrade
-
-        day1_bundle = run_day1_ieee_optica_upgrade(cfg=cfg)
+        bundle = run_day1_ieee_optica_upgrade(cfg=cfg)
         print("\nO-E-S-C-L Day-1 IEEE/Optica upgrade completed.")
-        print(f"Results root: {output_dir.resolve()}")
-        print(f"Day-1 report: {Path(day1_bundle['report_path']).resolve()}")
-        print(f"Day-1 LaTeX snippet: {Path(day1_bundle['latex_snippet_path']).resolve()}")
+        print(f"Report: {Path(bundle['report_path']).resolve()}")
         return
 
     if args.mode == "day2":
         from src.oescl.day2 import run_day2_ieee_optica_upgrade
-
-        day2_bundle = run_day2_ieee_optica_upgrade(cfg=cfg)
+        bundle = run_day2_ieee_optica_upgrade(cfg=cfg)
         print("\nO-E-S-C-L Day-2 IEEE/Optica upgrade completed.")
-        print(f"Results root: {output_dir.resolve()}")
-        print(f"Day-2 report: {Path(day2_bundle['report_path']).resolve()}")
-        print(f"Day-2 LaTeX snippet: {Path(day2_bundle['latex_snippet_path']).resolve()}")
-        print("\nGenerated Day-2 figures:")
-        for p in day2_bundle["figure_paths"]:
+        print(f"Report: {Path(bundle['report_path']).resolve()}")
+        return
+
+    if args.mode == "day4":
+        from src.oescl.day4 import run_day4_optica_scientific_upgrade
+        bundle = run_day4_optica_scientific_upgrade(cfg=cfg)
+        print("\nO-E-S-C-L Day-4 Optica scientific upgrade completed.")
+        print(f"Report: {Path(bundle['report_path']).resolve()}")
+        return
+
+    if args.mode == "day4cal":
+        from src.oescl.day4_calibration import run_day4_calibration_fix
+        bundle = run_day4_calibration_fix(cfg=cfg)
+        print("\nO-E-S-C-L Day-4 calibration/fix completed.")
+        print(f"Calibration report: {Path(bundle['report_path']).resolve()}")
+        print(f"Calibrated comparison report: {Path(bundle['comparison_report_path']).resolve()}")
+        return
+
+    if args.mode == "day5":
+        from src.oescl.day5 import run_day5_optica_evidence
+        bundle = run_day5_optica_evidence(cfg=cfg)
+        print("\nO-E-S-C-L Day-5 Optica evidence run completed.")
+        print(f"Report: {Path(bundle['report_path']).resolve()}")
+        print(f"Acceptance gate: {Path(bundle['acceptance_report_path']).resolve()}")
+        return
+
+    if args.mode == "day6":
+        from src.oescl.day6 import run_day6_pcs_confirmation
+        bundle = run_day6_pcs_confirmation(cfg=cfg)
+        print("\nO-E-S-C-L Day-6 PCS confirmation run completed.")
+        print(f"Report: {Path(bundle['report_path']).resolve()}")
+        print(f"Acceptance gate: {Path(bundle['acceptance_report_path']).resolve()}")
+        print(f"LaTeX snippet: {Path(bundle['latex_snippet_path']).resolve()}")
+        print("\nGenerated Day-6 figures:")
+        for p in bundle["figure_paths"]:
             print(f"- {Path(p).resolve()}")
         return
 

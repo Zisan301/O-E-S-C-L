@@ -1,0 +1,10 @@
+{
+  "package": "Day-4 meaningful stress tuning patch",
+  "purpose": "Avoid saturated GMI=4/NGMI=1/BER=0 after receiver dispersion compensation.",
+  "files": [
+    "config/day4_calibrated_config.yaml",
+    "scripts/run_day4_meaningful_stress.bat",
+    "DAY4_MEANINGFUL_STRESS_TUNING_README.md"
+  ],
+  "run_command": "python main.py --config config/day4_calibrated_config.yaml --mode day4cal"
+}

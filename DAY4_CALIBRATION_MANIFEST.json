@@ -1,0 +1,14 @@
+{
+  "package": "O-E-S-C-L Day-4 calibration/fix patch",
+  "files": [
+    "main.py",
+    "config/day4_calibrated_config.yaml",
+    "src/oescl/ssfm_calibrated.py",
+    "src/oescl/day4_calibration.py",
+    "src/oescl/day4_calibration_plots.py",
+    "scripts/run_day4_calibration_fix.bat",
+    "scripts/run_day4_calibration_fix.sh",
+    "DAY4_CALIBRATION_README.md"
+  ],
+  "run_command": "python main.py --config config/day4_calibrated_config.yaml --mode day4cal"
+}

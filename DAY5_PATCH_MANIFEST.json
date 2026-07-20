@@ -1,0 +1,17 @@
+{
+  "package": "O-E-S-C-L Day-5 Optica evidence patch",
+  "files": [
+    "main.py",
+    "config/day5_optica_evidence_config.yaml",
+    "src/oescl/gmi_exact.py",
+    "src/oescl/day5_waveform.py",
+    "src/oescl/day5_equalizers.py",
+    "src/oescl/day5_plots.py",
+    "src/oescl/day5.py",
+    "scripts/run_day5_optica_evidence.bat",
+    "scripts/run_day5_optica_evidence.sh",
+    "DAY5_README.md"
+  ],
+  "run_command": "python main.py --config config/day5_optica_evidence_config.yaml --mode day5",
+  "scientific_goal": "Optica-level evidence: waveform SSFM starter, memory neural equalizer, exact GMI, stress selector, acceptance gate."
+}

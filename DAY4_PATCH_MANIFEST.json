@@ -1,0 +1,16 @@
+{
+  "package": "O-E-S-C-L Day-4 Optica scientific upgrade patch",
+  "files": [
+    "main.py",
+    "config/day4_optica_scientific_config.yaml",
+    "src/oescl/ssfm_lite.py",
+    "src/oescl/gmi_exact.py",
+    "src/oescl/baselines.py",
+    "src/oescl/day4_plots.py",
+    "src/oescl/day4.py",
+    "scripts/run_day4_optica_scientific.bat",
+    "scripts/run_day4_optica_scientific.sh",
+    "DAY4_README.md"
+  ],
+  "run_command": "python main.py --config config/day4_optica_scientific_config.yaml --mode day4"
+}

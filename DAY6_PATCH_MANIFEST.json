@@ -1,0 +1,17 @@
+{
+  "package": "O-E-S-C-L Day-6 PCS confirmation patch",
+  "purpose": "Confirm Day-5B nonzero PCS gain with more seeds, more symbols, paired comparison, and strict CI-aware acceptance.",
+  "files": [
+    "main.py",
+    "config/day6_pcs_confirmation_config.yaml",
+    "src/oescl/day6.py",
+    "src/oescl/day6_plots.py",
+    "src/oescl/gmi_exact.py",
+    "src/oescl/day5_waveform.py",
+    "src/oescl/day5_equalizers.py",
+    "scripts/run_day6_pcs_confirmation.bat",
+    "scripts/run_day6_pcs_confirmation.sh",
+    "DAY6_README.md"
+  ],
+  "run_command": "python main.py --config config/day6_pcs_confirmation_config.yaml --mode day6"
+}

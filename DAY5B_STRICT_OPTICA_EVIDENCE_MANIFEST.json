@@ -1,0 +1,15 @@
+{
+  "package": "O-E-S-C-L Day-5B strict Optica evidence patch",
+  "purpose": "Tighten Day-5 acceptance gate and stress region to avoid weak/saturated claims.",
+  "files": [
+    "src/oescl/day5.py",
+    "src/oescl/gmi_exact.py",
+    "src/oescl/day5_waveform.py",
+    "src/oescl/day5_equalizers.py",
+    "src/oescl/day5_plots.py",
+    "config/day5_optica_evidence_config.yaml",
+    "scripts/run_day5b_strict_optica_evidence.bat",
+    "DAY5B_STRICT_OPTICA_EVIDENCE_README.md"
+  ],
+  "run_command": "python main.py --config config/day5_optica_evidence_config.yaml --mode day5"
+}

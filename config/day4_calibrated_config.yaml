@@ -1,0 +1,131 @@
+project:
+  name: "O-E-S-C-L"
+  paper_title: "Calibrated SSFM-Lite Validation for Multi-Band O/E/S/C/L Neural Residual Compensation"
+
+simulation:
+  seed: 42
+  spans: 6
+  span_length_km: 80.0
+  baud_rate_gbaud: 64.0
+  channel_spacing_ghz: 75.0
+  modulation: "16QAM"
+  symbols_per_channel_full: 12000
+  symbols_per_channel_smoke: 1500
+  n_channels_per_band_full: 9
+  n_channels_per_band_smoke: 3
+  launch_power_dbm_grid: [-4.0, -2.0, 0.0, 2.0, 4.0]
+  default_launch_power_dbm: 0.0
+
+day4_calibration:
+  seed: 123
+  symbols: 9000
+  sanity_symbols: 4000
+  band: "C"
+  spans: 6
+  launch_power_dbm: 0.0
+  pcs_nu: 0.12
+
+  # V2 meaningful-stress calibration.
+  # Previous receiver-CD-compensated run was too easy:
+  # GMI=4, NGMI=1, BER=0 everywhere.
+  # These settings deliberately target useful, non-saturated regions.
+  ssfm_steps_per_span: 6
+  dispersion_strength_scale: 0.018
+  nonlinear_strength_scale: 0.032
+  ase_noise_base: 7.5e-3
+  implementation_noise_base: 1.2e-3
+  phase_noise_std: 0.012
+  receiver_awgn_scale: 1.0
+  normalize_each_span: true
+  receiver_dispersion_compensation: true
+
+  # Target behavior:
+  # easy   -> clean but not fully saturated
+  # medium -> useful comparison region
+  # hard   -> degraded but not random
+  regimes:
+    easy:
+      ase_multiplier: 0.20
+      nonlinear_multiplier: 0.30
+      implementation_multiplier: 0.25
+    medium:
+      ase_multiplier: 1.00
+      nonlinear_multiplier: 1.00
+      implementation_multiplier: 1.00
+    hard:
+      ase_multiplier: 3.50
+      nonlinear_multiplier: 2.75
+      implementation_multiplier: 2.50
+
+  launch_power_grid: [-2.0, 0.0, 2.0, 4.0]
+  regime_for_comparison: "medium"
+  seeds: [1, 2, 3]
+  max_iter_neural: 140
+  gmi_monte_carlo_limit: 25000
+  llr_noise_floor: 1.0e-4
+
+bands:
+  O:
+    center_nm: 1310.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.32
+    dispersion_ps_nm_km: 0.0
+    noise_figure_db: 6.0
+  E:
+    center_nm: 1400.0
+    bandwidth_thz: 8.0
+    attenuation_db_per_km: 0.28
+    dispersion_ps_nm_km: 2.0
+    noise_figure_db: 5.8
+  S:
+    center_nm: 1490.0
+    bandwidth_thz: 10.0
+    attenuation_db_per_km: 0.22
+    dispersion_ps_nm_km: 8.0
+    noise_figure_db: 5.5
+  C:
+    center_nm: 1550.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.19
+    dispersion_ps_nm_km: 16.7
+    noise_figure_db: 5.0
+  L:
+    center_nm: 1605.0
+    bandwidth_thz: 12.0
+    attenuation_db_per_km: 0.21
+    dispersion_ps_nm_km: 20.0
+    noise_figure_db: 5.3
+
+fiber:
+  gamma_w_inv_km: 1.25
+  nonlinear_eta_base: 1.15e-3
+  polarization_modes: 2
+  implementation_margin_db: 1.0
+
+pcs:
+  enabled: true
+  shaping_nu: 0.18
+  entropy_bits_per_symbol: 3.65
+
+neural_nli:
+  enabled: true
+  hidden_layer_sizes: [32, 16]
+  max_iter_full: 140
+  max_iter_smoke: 60
+  max_iter_day2: 100
+  alpha: 0.0001
+  training_fraction: 0.55
+  random_state: 42
+
+validation:
+  max_reasonable_total_rate_tbps: 250.0
+  min_valid_ngmi: 0.45
+  max_valid_ber: 0.30
+  require_finite_metrics: true
+
+output:
+  root: "results"
+  figures: "results/figures"
+  tables: "results/tables"
+  reports: "results/reports"
+  models: "results/models"

@@ -1,0 +1,5 @@
+test,gmi,ngmi,ber,gsnr_db,rate_tbps,waveform_samples,sps,spans,launch_power_dbm,band,stress_name,stress_noise,stress_nonlinear,stress_implementation,total_steps,receiver_cd_compensation
+identity_waveform,4.0,1.0,0.0,35.781120627420535,0.4266666666666667,4112,2,6,0.0,C,sanity,0.0,0.0,0.0,24,True
+pulse_shape_matched_filter_only,4.0,1.0,0.0,35.781120627420535,0.4266666666666667,4112,2,6,0.0,C,sanity,0.0,0.0,0.0,24,True
+dispersion_with_receiver_cd,4.0,1.0,0.0,35.781120627420464,0.4266666666666667,4112,2,6,0.0,C,sanity,0.0,0.0,0.0,24,True
+nonlinear_no_noise,4.0,1.0,0.0,35.781120627420464,0.4266666666666667,4112,2,6,0.0,C,sanity,0.0,0.0,0.0,24,True

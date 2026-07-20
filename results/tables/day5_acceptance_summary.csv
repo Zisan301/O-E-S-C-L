@@ -1,0 +1,2 @@
+passes_high_level_optica_gate,neural_beats_all_baselines,pcs_nonzero_wins,recommended_claim
+True,False,True,Strict gate passed: nonzero PCS improves exact GMI/rate in a non-saturated waveform operating region. Do not claim neural superiority unless it also beats baselines.

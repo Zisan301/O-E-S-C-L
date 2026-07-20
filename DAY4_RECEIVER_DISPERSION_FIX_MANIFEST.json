@@ -1,0 +1,11 @@
+{
+  "package": "Day-4 receiver dispersion compensation fix",
+  "reason": "linear-dispersion-only sanity test had BER around 0.074, so receiver CD compensation was missing.",
+  "files": [
+    "src/oescl/ssfm_calibrated.py",
+    "src/oescl/day4_calibration.py",
+    "config/day4_calibrated_config.yaml",
+    "DAY4_RECEIVER_DISPERSION_COMPENSATION_FIX_README.md"
+  ],
+  "run_command": "python main.py --config config/day4_calibrated_config.yaml --mode day4cal"
+}
