@@ -1,0 +1,5 @@
+scenario,display_name,mean_parameter_count,total_train_time_s,mean_inference_time_ms_per_channel,mean_residual_mse_improvement_percent
+uniform_baseline,Uniform baseline,0.0,0.0,0.0,0.0
+pcs_only,PCS only,0.0,0.0,0.0,0.0
+neural_only,Neural NLI only,786.0,3.3233962000008432,0.7962399999693541,6.983881582848617
+proposed_pcs_neural,Proposed PCS + Neural NLI,786.0,3.8984277999998085,1.155566666663314,5.542469420456464

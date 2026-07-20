@@ -1,0 +1,29 @@
+{
+  "package": "O-E-S-C-L conference-level replacement package",
+  "created_files": [
+    "README_CONFERENCE.md",
+    "config/conference_config.yaml",
+    "main.py",
+    "paper/title_and_plan.md",
+    "requirements.txt",
+    "scripts/run_conference_pipeline.bat",
+    "scripts/run_conference_pipeline.sh",
+    "scripts/run_smoke_test.bat",
+    "src/__init__.py",
+    "src/oescl/__init__.py",
+    "src/oescl/channel.py",
+    "src/oescl/config.py",
+    "src/oescl/constellation.py",
+    "src/oescl/experiments.py",
+    "src/oescl/metrics.py",
+    "src/oescl/neural_nli.py",
+    "src/oescl/pcs.py",
+    "src/oescl/plots.py",
+    "src/oescl/reporting.py",
+    "src/oescl/utils.py",
+    "src/oescl/validation.py",
+    "tests/test_smoke.py"
+  ],
+  "entrypoint": "main.py",
+  "command": "python main.py --config config/conference_config.yaml --mode full"
+}

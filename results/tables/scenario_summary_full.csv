@@ -1,0 +1,5 @@
+scenario,display_name,total_net_rate_tbps,mean_net_rate_tbps_per_channel,mean_ber,median_ber,mean_ngmi,mean_gsnr_db,n_channels
+uniform_baseline,Uniform baseline,19.199999999999996,0.4266666666666666,0.0,0.0,1.0,25.118856156228087,45
+pcs_only,PCS only,19.164193966712048,0.4258709770380455,0.0,0.0,1.0,24.98779008746834,45
+neural_only,Neural NLI only,19.199999999999996,0.4266666666666666,0.0,0.0,1.0,34.59967640299797,45
+proposed_pcs_neural,Proposed PCS + Neural NLI,19.164193966712048,0.4258709770380455,0.0,0.0,1.0,35.70635343262259,45
