@@ -1,0 +1,14 @@
+{
+  "package": "O-E-S-C-L Day-8 Q3 C/S/C+S band comparison patch",
+  "run_command": "python main.py --config config/day8_q3_band_comparison_config.yaml --mode day8",
+  "files": [
+    "main.py",
+    "config/day8_q3_band_comparison_config.yaml",
+    "src/oescl/day8_q3_band_comparison.py",
+    "src/oescl/day8_plots.py",
+    "src/oescl/day5_waveform.py",
+    "src/oescl/gmi_exact.py",
+    "scripts/run_day8_q3_band_comparison.bat",
+    "DAY8_README.md"
+  ]
+}
