@@ -1,0 +1,13 @@
+Dear Editor-in-Chief,
+
+We respectfully submit the manuscript entitled "Comparative Waveform-Level SSFM Evaluation of Probabilistic Shaping in C-, S-, and C+S-Band Coherent Optical Links" for consideration as a research article in Photonic Network Communications.
+
+The manuscript presents a simulation-based, band-aware validation framework for probabilistic constellation shaping in coherent optical links. The study compares C-band, S-band, and simplified combined C+S-band scenarios using a common waveform-level methodology, exact bit-metric GMI/NGMI evaluation, paired seed-level confidence intervals, and strict non-saturation acceptance gates. All three evaluated scenarios pass the band-level acceptance gate, with the strongest C+S case achieving a paired GMI gain of 0.0732 +/- 0.0118 bits/symbol and an aggregate-rate gain of 0.0156 +/- 0.0025 Tb/s.
+
+We believe the work is within the journal scope because it addresses photonic network transmission performance, coherent optical-link simulation, multi-band optical operation, and statistically validated modulation optimization. The manuscript explicitly states that the C+S model uses a simplified lumped inter-band penalty and does not claim full Raman-calibrated WDM experimental validation.
+
+The work has not been published previously and is not under consideration elsewhere. All authors have approved the submission. The manuscript contains data availability, code availability, funding, competing interests, author contributions, ethics, consent, and AI-assisted tools statements.
+
+Sincerely,
+Methela Farjana Zim
+Corresponding Author
