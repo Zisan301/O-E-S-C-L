@@ -1,0 +1,6 @@
+[console_scripts]
+gnpy-convert-xls = gnpy.tools.convert:_do_convert
+gnpy-convert-yang = gnpy.tools.convert_legacy_yang:main
+gnpy-example-data = gnpy.tools.cli_examples:show_example_data_dir
+gnpy-path-request = gnpy.tools.cli_examples:path_requests_run
+gnpy-transmission-example = gnpy.tools.cli_examples:transmission_main_example

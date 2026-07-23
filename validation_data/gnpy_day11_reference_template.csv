@@ -1,0 +1,9 @@
+scenario_group,band,spans,launch_power_dbm,reference_model,reference_source,reference_gsnr_db,notes
+C,C,10,-2.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+C,C,10,0.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+C,C,10,2.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+C,C,10,4.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+S,S,12,-2.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+S,S,12,0.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+S,S,12,2.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB
+S,S,12,4.0,GNPy,fill_with_version_or_script,,fill real external GSNR value in dB

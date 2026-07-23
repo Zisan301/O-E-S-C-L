@@ -1,0 +1,2 @@
+status,expected_csv_path,message
+reference_loaded,validation_data\gnpy_day11_reference.csv,Loaded 8 external reference rows.

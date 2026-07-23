@@ -1,0 +1,21 @@
+*** Begin Patch
+*** Update File: main.py
+@@
+-    parser.add_argument('--mode', type=str, default='full', choices=['smoke','full','day1','day2','day4','day4cal','day5','day6','day8'])
++    parser.add_argument('--mode', type=str, default='full', choices=['smoke','full','day1','day2','day4','day4cal','day5','day6','day8','day9'])
+@@
+     if args.mode == 'day8':
+         from src.oescl.day8_q3_band_comparison import run_day8_q3_band_comparison
+         b = run_day8_q3_band_comparison(cfg=cfg)
+         print('\nO-E-S-C-L Day-8 Q3 C/S/C+S band comparison completed.')
+         print(f"Report: {Path(b['report_path']).resolve()}")
+         print(f"Acceptance report: {Path(b['acceptance_report_path']).resolve()}")
+         print(f"LaTeX snippet: {Path(b['latex_snippet_path']).resolve()}")
+         return
++    if args.mode == 'day9':
++        from src.oescl.day9_validation import run_day9_publication_validation
++        b = run_day9_publication_validation(cfg=cfg)
++        print('\nO-E-S-C-L Day-9 publication validation completed.')
++        print(f"Report: {Path(b['reports']['validation_report']).resolve()}")
++        return
+*** End Patch

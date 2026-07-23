@@ -1,0 +1,5 @@
+scenario_group,band,spans,launch_power_dbm,reference_gsnr_db,reference_source,notes,c_reference_gsnr_db,s_reference_gsnr_db
+C+S,C+S,12,-2.0,12.015075222831161,"derived from Day-12 matched single-band GNPy C and S references; separable baseline, not Raman/ISRS-aware",Derived separable C+S reference from matched C and S GNPy values; not Raman/ISRS-aware,12.22,11.8
+C+S,C+S,12,0.0,13.652938330547077,"derived from Day-12 matched single-band GNPy C and S references; separable baseline, not Raman/ISRS-aware",Derived separable C+S reference from matched C and S GNPy values; not Raman/ISRS-aware,14.03,13.24
+C+S,C+S,12,2.0,14.391027054892335,"derived from Day-12 matched single-band GNPy C and S references; separable baseline, not Raman/ISRS-aware",Derived separable C+S reference from matched C and S GNPy values; not Raman/ISRS-aware,15.13,13.5
+C+S,C+S,12,4.0,14.391027054892335,"derived from Day-12 matched single-band GNPy C and S references; separable baseline, not Raman/ISRS-aware",Derived separable C+S reference from matched C and S GNPy values; not Raman/ISRS-aware,15.13,13.5

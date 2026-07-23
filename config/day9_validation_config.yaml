@@ -1,0 +1,127 @@
+project:
+  name: "O-E-S-C-L"
+  paper_title: "Comparative Waveform-Level SSFM Evaluation of Probabilistic Shaping in C-, S-, and C+S-Band Coherent Optical Links"
+
+simulation:
+  seed: 42
+  spans: 6
+  span_length_km: 80.0
+  baud_rate_gbaud: 64.0
+  channel_spacing_ghz: 75.0
+  modulation: "16QAM"
+  symbols_per_channel_full: 12000
+  symbols_per_channel_smoke: 1500
+  n_channels_per_band_full: 9
+  n_channels_per_band_smoke: 3
+  launch_power_dbm_grid: [-4.0, -2.0, 0.0, 2.0, 4.0]
+  default_launch_power_dbm: 0.0
+
+day5:
+  seed: 2026
+  symbols: 4096
+  sanity_symbols: 2048
+  samples_per_symbol: 2
+  rrc_rolloff: 0.20
+  rrc_span_symbols: 8
+  waveform_spans: [6, 8, 10, 12]
+  span_length_km: 80.0
+  ssfm_steps_per_span: 4
+  dispersion_scale: 0.040
+  nonlinear_scale: 0.030
+  receiver_cd_compensation: true
+  matched_filter: true
+  normalize_per_span: true
+  gmi_monte_carlo_limit: 30000
+  llr_noise_floor: 1.0e-5
+
+day8:
+  seed: 8080
+  scenarios: ["C", "S", "C+S"]
+  spans_grid: [6, 8, 10, 12]
+  launch_power_grid: [-2.0, 0.0, 2.0, 4.0, 6.0]
+  pcs_nu_grid: [0.00, 0.12, 0.16, 0.20, 0.24, 0.28, 0.32, 0.36]
+  seeds: [1, 2, 3, 4, 5, 6, 7]
+  symbols: 8192
+  stress:
+    name: "q3_evidence"
+    noise: 0.055
+    nonlinear: 2.80
+    implementation: 0.0080
+    phase: 0.026
+  channels_per_band:
+    C: 1
+    S: 1
+    C+S: 2
+  cs_interband_penalty:
+    enabled: true
+    noise_multiplier: 1.12
+    nonlinear_multiplier: 1.18
+    implementation_multiplier: 1.03
+    gsnr_penalty_db: 0.20
+  min_gmi_gain: 0.015
+  min_ngmi_gain: 0.003
+  min_rate_gain_tbps_per_channel: 0.0010
+  max_ber: 0.10
+  require_gain_above_combined_ci95: true
+  require_non_saturated: true
+  target_gmi_min: 2.40
+  target_gmi_max: 3.85
+  target_ngmi_min: 0.60
+  target_ngmi_max: 0.97
+  target_ber_min: 1.0e-4
+  target_ber_max: 1.0e-1
+
+day9_validation:
+  accepted_points:
+    - {scenario_group: "C", spans: 10, launch_power_dbm: 2.0, pcs_nu: 0.36}
+    - {scenario_group: "S", spans: 12, launch_power_dbm: -2.0, pcs_nu: 0.36}
+    - {scenario_group: "C+S", spans: 12, launch_power_dbm: 0.0, pcs_nu: 0.36}
+  raw_per_seed:
+    seeds: [1, 2, 3, 4, 5, 6, 7]
+  ssfm_convergence:
+    enabled: true
+    scenarios: ["C", "S"]
+    seeds: [1, 2, 3]
+    steps_per_span_grid: [2, 4, 8, 12]
+    symbols: 4096
+    reference_steps_per_span: 12
+    pass_gmi_gain_tolerance: 0.020
+    pass_ngmi_gain_tolerance: 0.006
+  symbol_convergence:
+    enabled: true
+    scenarios: ["C", "S"]
+    seeds: [1, 2, 3]
+    symbol_grid: [2048, 4096, 8192]
+    steps_per_span: 4
+    reference_symbols: 8192
+    pass_gmi_gain_tolerance: 0.020
+    pass_ngmi_gain_tolerance: 0.006
+  gn_style_benchmark:
+    enabled: true
+    scenarios: ["C", "S"]
+    seeds: [1, 2, 3]
+    powers: [-2.0, 0.0, 2.0, 4.0]
+    symbols: 4096
+    steps_per_span: 4
+  external_reference:
+    enabled: true
+    csv_path: "validation_data/gnpy_day9_reference.csv"
+    expected_columns: ["scenario_group", "band", "spans", "launch_power_dbm", "reference_gsnr_db"]
+
+bands:
+  S: {center_nm: 1490.0, bandwidth_thz: 10.0, attenuation_db_per_km: 0.22, dispersion_ps_nm_km: 8.0, noise_figure_db: 5.5}
+  C: {center_nm: 1550.0, bandwidth_thz: 12.0, attenuation_db_per_km: 0.19, dispersion_ps_nm_km: 16.7, noise_figure_db: 5.0}
+  O: {center_nm: 1310.0, bandwidth_thz: 10.0, attenuation_db_per_km: 0.32, dispersion_ps_nm_km: 0.0, noise_figure_db: 6.0}
+  E: {center_nm: 1400.0, bandwidth_thz: 8.0, attenuation_db_per_km: 0.28, dispersion_ps_nm_km: 2.0, noise_figure_db: 5.8}
+  L: {center_nm: 1605.0, bandwidth_thz: 12.0, attenuation_db_per_km: 0.21, dispersion_ps_nm_km: 20.0, noise_figure_db: 5.3}
+
+fiber:
+  gamma_w_inv_km: 1.25
+  nonlinear_eta_base: 1.15e-3
+  polarization_modes: 2
+  implementation_margin_db: 1.0
+
+pcs: {enabled: true, shaping_nu: 0.18, entropy_bits_per_symbol: 3.65}
+neural_nli: {enabled: true, hidden_layer_sizes: [32, 16], max_iter_full: 120, max_iter_smoke: 60, max_iter_day2: 100, alpha: 0.0001, training_fraction: 0.55, random_state: 42}
+validation: {max_reasonable_total_rate_tbps: 250.0, min_valid_ngmi: 0.45, max_valid_ber: 0.30, require_finite_metrics: true}
+output: {root: "results", figures: "results/figures", tables: "results/tables", reports: "results/reports", models: "results/models"}

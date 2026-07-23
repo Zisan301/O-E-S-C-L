@@ -1,0 +1,33 @@
+inputs:
+  oesc_metric_candidates:
+    - results/tables/day8_raw_band_metrics.csv
+    - results/tables/day8_scenario_seed_metrics.csv
+    - results/tables/day8_raw_metrics.csv
+    - results/day8_raw_band_metrics.csv
+  matched_single_band_reference: results/tables/day12_gnpy_reference_values.csv
+  optional_true_cs_reference: validation_data/gnpy_day15_cs_reference.csv
+cs_case:
+  scenario_group: C+S
+  band: C+S
+  spans: 12
+  launch_powers_dbm: [-2, 0, 2, 4]
+  calibration_powers_dbm: [-2, 0]
+  validation_powers_dbm: [2, 4]
+reference:
+  derived_mode: linear_mean_snr_db
+  derived_reference_source: derived from Day-12 matched single-band GNPy C and S references; separable baseline, not Raman/ISRS-aware
+validation_gates:
+  primary_rmse_gate_db: 1.0
+  primary_max_abs_gate_db: 1.0
+  lopo_rmse_gate_db: 0.75
+  lopo_max_abs_gate_db: 1.0
+outputs:
+  report: results/reports/day15_cs_gnpy_calibrated_validation_report.md
+  latex_snippet: results/reports/day15_latex_cs_validation_snippet.tex
+  oesc_summary_csv: results/tables/day15_cs_oesc_uniform_gsnr_summary.csv
+  reference_csv: results/tables/day15_cs_external_reference.csv
+  primary_predictions_csv: results/tables/day15_cs_primary_holdout_predictions.csv
+  lopo_predictions_csv: results/tables/day15_cs_lopo_predictions.csv
+  protocol_summary_csv: results/tables/day15_cs_protocol_summary.csv
+  missing_oesc_template: validation_data/day15_cs_oesc_uniform_template.csv
+  figures_dir: results/figures

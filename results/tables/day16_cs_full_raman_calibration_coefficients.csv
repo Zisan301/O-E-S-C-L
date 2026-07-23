@@ -1,0 +1,2 @@
+intercept_db,slope_db_per_dbm,calibration_powers_dbm,heldout_powers_dbm
+0.5904241531164319,1.1884879235378498,"[-2, 0]","[2, 4]"

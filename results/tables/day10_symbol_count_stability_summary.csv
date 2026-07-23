@@ -1,0 +1,3 @@
+scenario_group,low_symbol_count,high_symbol_count,low_gmi_gain,high_gmi_gain,gmi_gain_drift,abs_gmi_gain_drift,relative_gmi_gain_drift,largest_count_positive_gain,passed_symbol_stability,reason
+C,16384,32768,0.04776154622837213,0.04148961396349409,-0.006271932264878037,0.006271932264878037,0.15116873033324893,True,True,passed
+S,16384,32768,0.06502709108648252,0.0604578233686429,-0.004569267717839623,0.004569267717839623,0.07557777411168796,True,True,passed

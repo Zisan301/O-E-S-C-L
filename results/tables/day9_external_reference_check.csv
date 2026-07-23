@@ -1,0 +1,2 @@
+status,expected_csv_path,message
+reference_file_missing,validation_data\gnpy_day9_reference.csv,Fill the template with GNPy/GN/EGN reference GSNR values and rerun this script.

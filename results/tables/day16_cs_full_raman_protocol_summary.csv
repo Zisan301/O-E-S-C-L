@@ -1,0 +1,4 @@
+protocol,set,passed,n,rmse_db,mae_db,max_abs_db,bias_db,interpretation
+cs_full_raman_uncalibrated,all_cases,False,4,3.0721403950742423,2.6041842068340064,4.992747511504993,-1.7109083598543724,Raw full C+S Raman/ISRS GNPy reference comparison.
+cs_full_raman_low_power_to_high_power_holdout,heldout_validation,True,2,0.2549321388997551,0.2156209021630202,0.3516283357628396,0.13600743359981937,Primary C+S full Raman/ISRS calibrated held-out validation.
+cs_full_raman_leave_one_power_out,heldout_validation_all_folds,True,4,0.2987979980275057,0.2566915501940721,0.4577796271804395,0.10267662007762857,C+S full Raman/ISRS cross-validation stability check.

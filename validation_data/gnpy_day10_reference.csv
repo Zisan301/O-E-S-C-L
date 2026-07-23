@@ -1,0 +1,3 @@
+scenario_group,band,spans,launch_power_dbm,reference_model,reference_gsnr_db,notes
+C,C,10,2.0,GNPy,,Fill with external GNPy/GN/EGN value and rerun Day-10.
+S,S,12,-2.0,GNPy,,Fill with external GNPy/GN/EGN value and rerun Day-10.

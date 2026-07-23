@@ -1,0 +1,12 @@
+{
+  "raman_params": {
+    "flag": true,
+    "method": "perturbative",
+    "order": 2,
+    "result_spatial_resolution": 10000.0,
+    "solver_spatial_resolution": 10000.0
+  },
+  "nli_params": {
+    "method": "ggn_spectrally_separated"
+  }
+}

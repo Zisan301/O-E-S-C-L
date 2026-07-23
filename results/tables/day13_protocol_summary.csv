@@ -1,0 +1,6 @@
+protocol,set,n,rmse_db,mae_db,max_abs_db,bias_db,rmse_gate_db,max_abs_gate_db,passed,interpretation
+uncalibrated_direct_gnpy_reference,all_cases,8,2.5055620450764713,2.0642715714597326,4.357940125738098,-1.1049797009467295,1.0,1.0,False,Direct uncalibrated reference comparison; expected to remain failed after Day-12.
+low_power_to_high_power_holdout,calibration,4,0.0,0.0,0.0,0.0,,,diagnostic,Calibration fit quality only; not validation.
+low_power_to_high_power_holdout,heldout_validation,4,0.33858646438632145,0.3034471421025353,0.5381000703152701,0.3034471421025353,1.0,1.0,True,Primary held-out calibrated validation.
+leave_one_power_out,heldout_validation_all_folds,8,0.235454152613293,0.1809695764417738,0.45503180665471277,-0.012370079474098405,0.75,1.0,True,Cross-validation stability check using held-out launch powers.
+all_case_band_linear_insample,in_sample_diagnostic_only,8,0.1214460040138991,0.08939357304950679,0.27169606771443,0.0,,,diagnostic,All-case in-sample diagnostic; do not present as validation.

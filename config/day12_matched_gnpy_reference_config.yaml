@@ -1,0 +1,69 @@
+# Day-12 matched GNPy reference configuration
+# Goal: make the GNPy reference closer to O-E-S-C-L assumptions.
+# Default keeps the same 76 channels used by your first GNPy run, but changes
+# baud rate to 64 Gbaud, spacing/slot width to 75 GHz, and moves S band to 1490 nm.
+
+project:
+  root: .
+
+gnpy:
+  command: gnpy-transmission-example
+  base_equipment: validation_data/gnpy_day11_equipment.json
+  matched_equipment: validation_data/gnpy_day12_matched_equipment.json
+
+  base_networks:
+    C: validation_data/gnpy_C_10span_network.json
+    S: validation_data/gnpy_S_12span_network.json
+
+  matched_networks:
+    C: validation_data/gnpy_C_10span_day12_network.json
+    S: validation_data/gnpy_S_12span_day12_network.json
+
+  spectrum_files:
+    C: validation_data/gnpy_C_day12_spectrum.json
+    S: validation_data/gnpy_S_day12_spectrum.json
+
+  # O-E-S-C-L study assumptions to align in GNPy.
+  baud_rate_hz: 64000000000.0
+  slot_width_hz: 75000000000.0
+  roll_off: 0.15
+  tx_osnr_db: 40.0
+
+  # Keep 76 to match the number of channels observed in your first GNPy outputs.
+  # For a stronger full-band stress test later, change C to 161 and S to 134,
+  # but start with 76 so the comparison is not too different from Day-11.
+  n_channels:
+    C: 76
+    S: 76
+
+  center_wavelength_nm:
+    C: 1550.0
+    S: 1490.0
+
+  # Fiber parameters from your O-E-S-C-L Day-8 settings.
+  fiber:
+    C:
+      type_variety: SSMF_C_day12
+      loss_coef_db_per_km: 0.19
+      dispersion_ps_nm_km: 16.7
+      effective_area_m2: 8.3e-11
+    S:
+      type_variety: SSMF_S_day12
+      loss_coef_db_per_km: 0.22
+      dispersion_ps_nm_km: 8.0
+      effective_area_m2: 8.3e-11
+
+  edfa_type_variety: std_medium_gain_day12_wide
+  edfa_frequency_min_hz: 190000000000000.0
+  edfa_frequency_max_hz: 205500000000000.0
+
+  powers_dbm: [-2, 0, 2, 4]
+
+output:
+  table: results/tables/day12_gnpy_reference_values.csv
+  report: results/reports/day12_matched_gnpy_reference_report.md
+  logs_dir: results/logs/day12_gnpy
+  day11_reference_csv: validation_data/gnpy_day11_reference.csv
+  update_day11_reference_csv: true
+  run_day11_after: false
+  day11_config: config/day11_external_validation_config.yaml

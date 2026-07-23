@@ -1,0 +1,36 @@
+# Day-13 model-alignment configuration for O-E-S-C-L.
+# Purpose: diagnose Day-12 GNPy mismatch and evaluate a transparent,
+# reviewer-safe, band-dependent launch-power calibration.
+
+project:
+  root: .
+
+input:
+  # This should be generated after Day-12 and Day-11 rerun.
+  day11_errors_csv: results/tables/day11_external_validation_errors.csv
+  day12_reference_csv: results/tables/day12_gnpy_reference_values.csv
+
+calibration:
+  # Primary reviewer-facing protocol:
+  # fit the correction on low-power points and test on held-out high-power points.
+  primary_protocol_name: low_power_to_high_power_holdout
+  calibration_powers_dbm: [-2, 0]
+  validation_powers_dbm: [2, 4]
+
+  # Correction model fitted separately for each band:
+  # reference_gsnr = oesc_uniform_gsnr + intercept + slope * launch_power_dbm
+  correction_model: band_linear_power_offset
+
+thresholds:
+  # Conservative gates for calibrated external validation.
+  primary_holdout_rmse_pass_db: 1.0
+  primary_holdout_max_abs_pass_db: 1.0
+  lopo_rmse_pass_db: 0.75
+  lopo_max_abs_pass_db: 1.0
+
+output:
+  tables_dir: results/tables
+  reports_dir: results/reports
+  figures_dir: results/figures
+  report_md: results/reports/day13_model_alignment_report.md
+  latex_snippet: results/reports/day13_latex_calibrated_validation_snippet.tex

@@ -1,0 +1,7 @@
+% Day-15 C+S calibrated validation snippet
+\subsection{C+S Calibrated External-Reference Validation}
+The simplified C+S scenario was evaluated with a calibrated external-reference protocol. The C+S correction was modeled as
+\begin{equation}
+G_{\mathrm{cal},CS}(P)=G_{\mathrm{OESCL},CS}(P)+a_{CS}+b_{CS}P,
+\end{equation}
+where $P$ is the launch power in dBm. The fitted intercept and slope were 1.3334 dB and 1.1974 dB/dBm, respectively. The held-out C+S validation RMSE was 0.2288 dB and the maximum absolute error was 0.3107 dB. The reference used in this run was: derived separable C+S baseline; not Raman/ISRS-aware. Therefore, unless a true Raman/ISRS-aware C+S reference is supplied, this result should be described as separable-baseline calibrated alignment rather than full physical C+S validation.

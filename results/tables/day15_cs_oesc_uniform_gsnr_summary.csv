@@ -1,0 +1,5 @@
+launch_power_dbm,spans,oesc_uniform_gsnr_mean_db,oesc_uniform_gsnr_std_db,n_seeds,scenario_group,band,case_id
+-2.0,12,13.076551693959269,0.34151963939766555,7,C+S,C+S,CS-12sp--2dBm
+0.0,12,12.319575846883568,0.23027504145590041,7,C+S,C+S,CS-12sp-+0dBm
+2.0,12,10.752986531244668,0.06781747571599563,7,C+S,C+S,CS-12sp-+2dBm
+4.0,12,7.9572524884950075,0.18449093413017234,7,C+S,C+S,CS-12sp-+4dBm

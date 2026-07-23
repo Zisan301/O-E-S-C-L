@@ -1,0 +1,56 @@
+project:
+  name: "O-E-S-C-L"
+  validation_stage: "Day-10 publication validation"
+
+base_config: "config/day8_q3_band_comparison_config.yaml"
+
+day10:
+  # Main publication-strength cases. Keep C and S as primary because they are
+  # physically cleaner than the simplified C+S stress scenario.
+  accepted_points:
+    - scenario_group: "C"
+      spans: 10
+      launch_power_dbm: 2.0
+      pcs_nu: 0.36
+    - scenario_group: "S"
+      spans: 12
+      launch_power_dbm: -2.0
+      pcs_nu: 0.36
+
+  # C+S may be enabled for supplementary stress evidence only.
+  include_cs_stress_case: false
+  cs_point:
+    scenario_group: "C+S"
+    spans: 12
+    launch_power_dbm: 0.0
+    pcs_nu: 0.36
+
+  # Stronger symbol-count convergence sweep. 32768 can be slow on an 8 GB laptop;
+  # keep it because this is for journal-level validation. Remove only if runtime
+  # is impossible, but then the manuscript claim should be weaker.
+  symbol_counts: [8192, 16384, 32768]
+  seeds: [1, 2, 3, 4, 5, 6, 7]
+
+  # Fixed SSFM steps for the symbol-count convergence sweep.
+  ssfm_steps_per_span: 8
+
+  # Optional extra convergence check at final symbol count.
+  run_step_convergence_check: true
+  step_convergence_steps_per_span: [4, 8, 12]
+  step_convergence_symbols: 16384
+
+  stability_gate:
+    compare_largest_two_symbol_counts: true
+    max_abs_gmi_gain_drift: 0.010
+    max_rel_gmi_gain_drift: 0.20
+    require_positive_gain_at_largest_count: true
+
+  external_reference:
+    expected_path: "validation_data/gnpy_day10_reference.csv"
+    template_path: "validation_data/gnpy_day10_reference_template.csv"
+    max_gsnr_rmse_db: 1.0
+
+  output:
+    tables: "results/tables"
+    figures: "results/figures"
+    reports: "results/reports"

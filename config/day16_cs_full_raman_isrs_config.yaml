@@ -1,0 +1,42 @@
+inputs:
+  oesc_cs_source_table: results/tables/day16_cs_oesc_source.csv
+  fallback_oesc_cs_table: results/tables/day16_cs_oesc_source.csv
+  raman_reference_csv: validation_data/gnpy_day16_cs_raman_reference.csv
+  raman_reference_template_csv: validation_data/gnpy_day16_cs_raman_reference_template.csv
+  gnpy_equipment: validation_data/gnpy_day11_equipment.json
+
+outputs:
+  report: results/reports/day16_cs_full_raman_isrs_validation_report.md
+  protocol_summary: results/tables/day16_cs_full_raman_protocol_summary.csv
+  predictions: results/tables/day16_cs_full_raman_predictions.csv
+  coefficients: results/tables/day16_cs_full_raman_calibration_coefficients.csv
+  figure_errors: results/figures/fig_day16_cs_full_raman_uncalibrated_vs_calibrated_errors.png
+  figure_correction: results/figures/fig_day16_cs_full_raman_correction_vs_power.png
+  figure_lopo: results/figures/fig_day16_cs_full_raman_lopo_errors.png
+  latex_snippet: results/reports/day16_cs_full_raman_latex_snippet.tex
+
+gnpy:
+  network_raman: validation_data/gnpy_CS_12span_full_raman_network.json
+  network_regular_fallback: validation_data/gnpy_CS_12span_regular_fiber_fallback_network.json
+  spectrum: validation_data/gnpy_CS_day16_full_cs_spectrum.json
+  sim_params: validation_data/gnpy_day16_raman_sim_params.json
+  log_dir: validation_data/gnpy_day16_cs_raman_logs
+  powers_dbm: [-2, 0, 2, 4]
+  spans: 12
+  span_length_km: 80
+  baud_rate_hz: 64000000000.0
+  slot_width_hz: 75000000000.0
+  channels_per_band: 76
+  c_center_nm: 1550.0
+  s_center_nm: 1490.0
+  c_loss_db_per_km: 0.19
+  s_loss_db_per_km: 0.22
+  use_network: raman
+
+validation:
+  calibration_powers_dbm: [-2, 0]
+  heldout_powers_dbm: [2, 4]
+  rmse_gate_db: 1.0
+  max_abs_gate_db: 1.0
+  lopo_rmse_gate_db: 0.75
+  lopo_max_abs_gate_db: 1.0

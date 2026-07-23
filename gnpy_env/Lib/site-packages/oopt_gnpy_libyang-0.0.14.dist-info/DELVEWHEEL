@@ -1,0 +1,2 @@
+Version: 1.5.2
+Arguments: ['C:\\hostedtoolcache\\windows\\Python\\3.12.1\\x64\\Scripts\\delvewheel', 'repair', 'D:\\a\\oopt-gnpy-libyang\\oopt-gnpy-libyang/build-wheel/oopt_gnpy_libyang-0.0.14-cp312-cp312-win_amd64.whl']

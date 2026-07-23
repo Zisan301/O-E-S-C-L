@@ -1,0 +1,5 @@
+scenario_group,band,spans,launch_power_dbm,reference_model,reference_source,reference_gsnr_db,reference_type,notes
+C+S,C+S,12,-2,GNPy Raman/ISRS,GNPy full C+S Raman/ISRS-aware run,,gnpy_full_raman_isrs,Fill from receiver GSNR(signal bw) of combined C+S Raman/ISRS run
+C+S,C+S,12,0,GNPy Raman/ISRS,GNPy full C+S Raman/ISRS-aware run,,gnpy_full_raman_isrs,Fill from receiver GSNR(signal bw) of combined C+S Raman/ISRS run
+C+S,C+S,12,2,GNPy Raman/ISRS,GNPy full C+S Raman/ISRS-aware run,,gnpy_full_raman_isrs,Fill from receiver GSNR(signal bw) of combined C+S Raman/ISRS run
+C+S,C+S,12,4,GNPy Raman/ISRS,GNPy full C+S Raman/ISRS-aware run,,gnpy_full_raman_isrs,Fill from receiver GSNR(signal bw) of combined C+S Raman/ISRS run

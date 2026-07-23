@@ -1,0 +1,3 @@
+scenario_group,band,spans,launch_power_dbm,reference_model,reference_gsnr_db,oescl_uniform_gsnr_db,gsnr_error_db
+C,C,10,2.0,internal_GN_style_sanity_not_GNPy,8.649064084523333,12.868238741919082,4.219174657395749
+S,S,12,-2.0,internal_GN_style_sanity_not_GNPy,5.565710711974263,13.457785471358893,7.89207475938463

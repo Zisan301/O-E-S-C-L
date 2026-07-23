@@ -1,0 +1,400 @@
+WARNING:gnpy.tools.json_io:
+	WARNING missing type_variety attribute in eqpt_config.json[Roadm]
+	default value is type_variety = default
+
+WARNING:gnpy.core.network:
+	WARNING: effective gain in Node edfa_CS_1
+	is below user specified amplifier std_medium_gain
+	min gain: 15dB ; required gain: 11.7dB. Please check amplifier type.
+
+WARNING:gnpy.core.network:
+	WARNING: effective gain in Node edfa_CS_12
+	is below user specified amplifier std_medium_gain
+	min gain: 15dB ; required gain: 14.7dB. Please check amplifier type.
+
+User input for spectrum used for propagation instead of SI
+Power mode is set to True
+=> it can be modified in eqpt_config.json - Span
+
+There are 12 fiber spans over 960 km between trx_A and trx_B
+
+Now propagating between trx_A and trx_B:
+Reference used for design: (Input optical power reference in span = -2.00dBm,
+                            spacing = 50.00GHz
+                            nb_channels = 76)
+
+Channels propagating: (Input optical power deviation in span = 0.00dB,
+                       spacing = 75.00GHz,
+                       transceiver output power = 0.00dBm,
+                       nb_channels = 64)
+Input optical power reference in span = [1;36;40m-2.00 dBm[0m:
+Transceiver trx_A
+  GSNR (0.1nm, dB):          40.00
+  GSNR (signal bw, dB):      32.91
+  OSNR ASE (0.1nm, dB):      40.00
+  OSNR ASE (signal bw, dB):  32.91
+  CD (ps/nm):                0.00
+  PMD (ps):                  0.00
+  PDL (dB):                  0.00
+  Latency (ms):              0.00
+  Actual pch out (dBm):      0.00
+Fiber          fiber_CS_1
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -17.20
+  actual pch out (dBm):        -15.21
+Edfa edfa_CS_1
+  type_variety:           std_medium_gain
+  effective gain(dB):     11.70
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      13.30
+  (including att_in)
+  pad att_in (dB):        3.30
+  Power In (dBm):         2.86
+  Power Out (dBm):        14.59
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.48
+  output VOA (dB):        0.00
+Fiber          fiber_CS_2
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.69
+Edfa edfa_CS_2
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.61
+  Power Out (dBm):        14.61
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.47
+  output VOA (dB):        0.00
+Fiber          fiber_CS_3
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.68
+Edfa edfa_CS_3
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.59
+  Power Out (dBm):        14.63
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.46
+  output VOA (dB):        0.00
+Fiber          fiber_CS_4
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.67
+Edfa edfa_CS_4
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.57
+  Power Out (dBm):        14.66
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.45
+  output VOA (dB):        0.00
+Fiber          fiber_CS_5
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.67
+Edfa edfa_CS_5
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.54
+  Power Out (dBm):        14.68
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.44
+  output VOA (dB):        0.00
+Fiber          fiber_CS_6
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.66
+Edfa edfa_CS_6
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.52
+  Power Out (dBm):        14.71
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.44
+  output VOA (dB):        0.00
+Fiber          fiber_CS_7
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.67
+Edfa edfa_CS_7
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.49
+  Power Out (dBm):        14.73
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.44
+  output VOA (dB):        0.00
+Fiber          fiber_CS_8
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.67
+Edfa edfa_CS_8
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.47
+  Power Out (dBm):        14.75
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.44
+  output VOA (dB):        0.00
+Fiber          fiber_CS_9
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.68
+Edfa edfa_CS_9
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.45
+  Power Out (dBm):        14.78
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.45
+  output VOA (dB):        0.00
+Fiber          fiber_CS_10
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.69
+Edfa edfa_CS_10
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.42
+  Power Out (dBm):        14.80
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.46
+  output VOA (dB):        0.00
+Fiber          fiber_CS_11
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.70
+Edfa edfa_CS_11
+  type_variety:           std_medium_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      9.76
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.40
+  Power Out (dBm):        14.82
+  Delta_P (dB):           -1.50
+  target pch (dBm):       -3.50
+  actual pch out (dBm):   -3.48
+  output VOA (dB):        0.00
+Fiber          fiber_CS_12
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -18.70
+  actual pch out (dBm):        -18.72
+Edfa edfa_CS_12
+  type_variety:           std_medium_gain
+  effective gain(dB):     14.70
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      10.30
+  (including att_in)
+  pad att_in (dB):        0.30
+  Power In (dBm):         -0.38
+  Power Out (dBm):        14.35
+  Delta_P (dB):           -2.00
+  target pch (dBm):       -4.00
+  actual pch out (dBm):   -3.99
+  output VOA (dB):        0.00
+Transceiver trx_B
+  GSNR (0.1nm, dB):          18.38
+  GSNR (signal bw, dB):      11.29
+  OSNR ASE (0.1nm, dB):      18.46
+  OSNR ASE (signal bw, dB):  11.37
+  CD (ps/nm):                16032.00
+  PMD (ps):                  1.24
+  PDL (dB):                  0.00
+  Latency (ms):              4.70
+  Actual pch out (dBm):      0.00
+
+Transmission result for input optical power reference in span = -2.00 dBm:
+  Final GSNR (0.1 nm): [1;36;40m18.38 dB[0m
+
+The GSNR per channel at the end of the line is:
+Ch. #   Channel frequency (THz)       Channel power (dBm)    OSNR ASE (signal bw, dB)     SNR NLI (signal bw, dB)        GSNR (signal bw, dB)
+    1                 191.31449                     -1.66                       12.93                       28.70                       12.81
+    2                 191.38949                     -1.73                       12.89                       28.21                       12.76
+    3                 191.46449                     -1.80                       12.85                       28.00                       12.72
+    4                 191.53949                     -1.87                       12.81                       27.89                       12.67
+    5                 191.61449                     -1.94                       12.77                       27.83                       12.63
+    6                 191.68949                     -2.01                       12.73                       27.80                       12.59
+    7                 191.76449                     -2.09                       12.69                       27.78                       12.55
+    8                 191.83949                     -2.16                       12.64                       27.78                       12.51
+    9                 191.91449                     -2.23                       12.60                       27.78                       12.47
+   10                 191.98949                     -2.31                       12.56                       27.80                       12.43
+   11                 192.06449                     -2.38                       12.52                       27.81                       12.39
+   12                 192.13949                     -2.46                       12.47                       27.84                       12.35
+   13                 192.21449                     -2.54                       12.43                       27.86                       12.30
+   14                 192.28949                     -2.62                       12.38                       27.90                       12.26
+   15                 192.36449                     -2.70                       12.33                       27.93                       12.22
+   16                 192.43949                     -2.79                       12.29                       27.97                       12.17
+   17                 192.51449                     -2.87                       12.24                       28.00                       12.12
+   18                 192.58949                     -2.96                       12.19                       28.05                       12.08
+   19                 192.66449                     -3.04                       12.14                       28.09                       12.03
+   20                 192.73949                     -3.13                       12.09                       28.13                       11.98
+   21                 192.81449                     -3.22                       12.04                       28.18                       11.93
+   22                 192.88949                     -3.31                       11.98                       28.23                       11.88
+   23                 192.96449                     -3.40                       11.93                       28.27                       11.83
+   24                 193.03949                     -3.49                       11.88                       28.32                       11.78
+   25                 193.11449                     -3.58                       11.82                       28.37                       11.73
+   26                 193.18949                     -3.68                       11.77                       28.42                       11.67
+   27                 193.26449                     -3.77                       11.71                       28.48                       11.62
+   28                 193.33949                     -3.87                       11.65                       28.53                       11.57
+   29                 193.41449                     -3.96                       11.60                       28.58                       11.51
+   30                 193.48949                     -4.06                       11.54                       28.64                       11.46
+   31                 193.56449                     -4.16                       11.48                       28.69                       11.40
+   32                 193.63949                     -4.25                       11.42                       28.74                       11.34
+   33                 193.71449                     -4.35                       11.37                       28.80                       11.29
+   34                 193.78949                     -4.45                       11.31                       28.85                       11.23
+   35                 193.86449                     -4.54                       11.25                       28.90                       11.18
+   36                 193.93949                     -4.64                       11.19                       28.96                       11.12
+   37                 194.01449                     -4.73                       11.13                       29.01                       11.06
+   38                 194.08949                     -4.83                       11.08                       29.07                       11.01
+   39                 194.16449                     -4.92                       11.02                       29.12                       10.95
+   40                 194.23949                     -5.02                       10.96                       29.17                       10.90
+   41                 194.31449                     -5.11                       10.90                       29.23                       10.84
+   42                 194.38949                     -5.20                       10.85                       29.28                       10.79
+   43                 194.46449                     -5.29                       10.79                       29.33                       10.73
+   44                 194.53949                     -5.38                       10.74                       29.39                       10.68
+   45                 194.61449                     -5.47                       10.68                       29.44                       10.62
+   46                 194.68949                     -5.55                       10.63                       29.49                       10.57
+   47                 194.76449                     -5.64                       10.57                       29.55                       10.52
+   48                 194.83949                     -5.72                       10.52                       29.60                       10.47
+   49                 194.91449                     -5.81                       10.47                       29.66                       10.41
+   50                 194.98949                     -5.89                       10.41                       29.71                       10.36
+   51                 195.06449                     -5.97                       10.36                       29.77                       10.31
+   52                 195.13949                     -6.05                       10.31                       29.83                       10.26
+   53                 195.21449                     -6.13                       10.26                       29.89                       10.22
+   54                 195.28949                     -6.20                       10.21                       29.95                       10.17
+   55                 195.36449                     -6.28                       10.16                       30.01                       10.12
+   56                 195.43949                     -6.35                       10.12                       30.08                       10.07
+   57                 195.51449                     -6.42                       10.07                       30.15                       10.03
+   58                 195.58949                     -6.50                       10.02                       30.23                        9.98
+   59                 195.66449                     -6.57                        9.98                       30.32                        9.94
+   60                 195.73949                     -6.63                        9.93                       30.42                        9.89
+   61                 195.81449                     -6.70                        9.89                       30.54                        9.85
+   62                 195.88949                     -6.77                        9.84                       30.71                        9.81
+   63                 195.96449                     -6.84                        9.80                       30.96                        9.76
+   64                 196.03949                     -7.48                        9.41                       31.50                        9.38
+
+(No source node specified: picked trx_A)
+
+(No destination node specified: picked trx_B)

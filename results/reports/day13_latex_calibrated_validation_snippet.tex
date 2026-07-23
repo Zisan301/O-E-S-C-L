@@ -1,0 +1,6 @@
+\subsection{GNPy-Calibrated Model Alignment}
+Direct uncalibrated comparison with the matched GNPy reference showed a remaining power-dependent GSNR deviation. Therefore, a band-dependent launch-power correction was evaluated rather than claiming direct raw agreement. The calibrated GSNR was computed as
+\begin{equation}
+G_{\mathrm{cal}}(P,b)=G_{\mathrm{OESC}}(P,b)+a_b+b_bP,
+\end{equation}
+where $P$ is the launch power in dBm and $a_b,b_b$ are fitted separately for each band. The primary calibration used the low-power cases ($-2$ and $0$ dBm) and evaluated the fitted correction on held-out high-power cases ($+2$ and $+4$ dBm). The held-out calibrated RMSE was 0.339 dB, with MAE 0.303 dB and maximum absolute error 0.538 dB. Leave-one-power-out validation gave RMSE 0.235 dB and maximum absolute error 0.455 dB. This supports a calibrated-alignment claim, while the uncalibrated mismatch is retained as a limitation.

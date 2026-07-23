@@ -1,0 +1,5 @@
+protocol,set,n,rmse_db,mae_db,max_abs_db,bias_db,rmse_gate_db,max_abs_gate_db,passed,interpretation
+cs_uncalibrated_reference,all_cases,4,3.792538128830204,3.116663511209153,6.433774566397328,-2.585925275645099,1.0,1.0,False,Raw C+S comparison; expected to be difficult.
+cs_low_power_to_high_power_holdout,calibration,2,0.0,0.0,0.0,0.0,,,diagnostic,Calibration fit quality only; not validation.
+cs_low_power_to_high_power_holdout,heldout_validation,2,0.22878452408598,0.2004475439790223,0.31073417315058727,-0.11028662917156495,1.0,1.0,True,Primary C+S held-out calibrated validation.
+cs_leave_one_power_out,heldout_validation_all_folds,4,0.2801821400176284,0.23862802854645393,0.43094872622719826,-0.09545121141858237,0.75,1.0,True,C+S cross-validation stability check.
