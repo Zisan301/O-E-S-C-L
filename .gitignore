@@ -1,5 +1,58 @@
+﻿# Python cache / bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+gnpy_env/
+ENV/
+
+# Jupyter / editor / OS
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Generated binary/model artifacts
+*.joblib
+*.pkl
+*.pickle
+results/models/
+
+# GNPy generated temporary topology/spectrum/stdout files
 validation_data/day11_gnpy_c10_*.json
 validation_data/day11_gnpy_reference_stdout.txt
 validation_data/day12_gnpy_c_*span_*.json
 validation_data/day12_gnpy_c_*span_stdout.txt
 validation_data/gnpy_smoke_test_stdout.txt
+
+# Keep curated CSV/MD/TEX reports that support the manuscript.
+
+# Tracked/generated cleanup protection
+gnpy_env/
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.joblib
+results/models/
