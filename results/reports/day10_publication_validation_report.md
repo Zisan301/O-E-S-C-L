@@ -39,9 +39,9 @@ The C+S case remains a simplified stress scenario unless enabled and externally 
 
 ## External reference check
 
-| status                           | expected_csv_path                        | message                                                              |
-|:---------------------------------|:-----------------------------------------|:---------------------------------------------------------------------|
-| reference_file_present_but_empty | validation_data\gnpy_day10_reference.csv | reference_gsnr_db values were empty or no matching cases were found. |
+| status             | scenario_group   | band   |   spans |   launch_power_dbm | reference_model         |   reference_gsnr_db |   oescl_uniform_gsnr_db |   gsnr_error_db |   external_gsnr_rmse_db | passed_external_reference_gate   |
+|:-------------------|:-----------------|:-------|--------:|-------------------:|:------------------------|--------------------:|------------------------:|----------------:|------------------------:|:---------------------------------|
+| reference_compared | C                | C      |      10 |                  2 | GNPy_9ch_center_channel |               18.78 |                 12.8631 |        -5.91695 |                 5.91695 | False                            |
 
 ## Correct manuscript claim after Day-10
 

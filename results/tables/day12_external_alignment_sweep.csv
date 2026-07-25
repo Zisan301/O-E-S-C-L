@@ -1,0 +1,5 @@
+scenario_group,band,spans,span_length_km,total_length_km,launch_power_dbm,gnpy_reference_gsnr_db,oescl_uniform_gsnr_mean_db,oescl_uniform_gsnr_std_db,oescl_n_seeds,gsnr_error_db,abs_gsnr_error_db,gnpy_stdout
+C,C,6,80.0,480.0,2.0,20.92,14.286831491964879,0.024952478652457886,5,-6.633168508035123,6.633168508035123,validation_data\day12_gnpy_c_6span_stdout.txt
+C,C,8,80.0,640.0,2.0,19.72,13.638557687939308,0.04551021194040223,5,-6.081442312060691,6.081442312060691,validation_data\day12_gnpy_c_8span_stdout.txt
+C,C,10,80.0,800.0,2.0,18.78,12.877686977277335,0.01921250081959246,5,-5.902313022722666,5.902313022722666,validation_data\day12_gnpy_c_10span_stdout.txt
+C,C,12,80.0,960.0,2.0,18.0,12.005551261898876,0.03138952474204857,5,-5.9944487381011236,5.9944487381011236,validation_data\day12_gnpy_c_12span_stdout.txt

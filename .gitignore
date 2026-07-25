@@ -1,0 +1,5 @@
+validation_data/day11_gnpy_c10_*.json
+validation_data/day11_gnpy_reference_stdout.txt
+validation_data/day12_gnpy_c_*span_*.json
+validation_data/day12_gnpy_c_*span_stdout.txt
+validation_data/gnpy_smoke_test_stdout.txt
