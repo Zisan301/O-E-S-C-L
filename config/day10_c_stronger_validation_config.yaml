@@ -1,0 +1,44 @@
+﻿project:
+  name: "O-E-S-C-L"
+  validation_stage: "Day-10 C-band stronger stability rerun"
+
+base_config: "config/day8_q3_band_comparison_config.yaml"
+
+day10:
+  accepted_points:
+    - scenario_group: "C"
+      spans: 10
+      launch_power_dbm: 2.0
+      pcs_nu: 0.24
+
+  include_cs_stress_case: false
+  cs_point:
+    scenario_group: "C+S"
+    spans: 12
+    launch_power_dbm: 0.0
+    pcs_nu: 0.36
+
+  symbol_counts: [16384, 32768, 65536]
+  seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+  ssfm_steps_per_span: 8
+
+  run_step_convergence_check: false
+  step_convergence_steps_per_span: [8]
+  step_convergence_symbols: 32768
+
+  stability_gate:
+    compare_largest_two_symbol_counts: true
+    max_abs_gmi_gain_drift: 0.010
+    max_rel_gmi_gain_drift: 0.20
+    require_positive_gain_at_largest_count: true
+
+  external_reference:
+    expected_path: "validation_data/gnpy_day10_reference.csv"
+    template_path: "validation_data/gnpy_day10_reference_template.csv"
+    max_gsnr_rmse_db: 1.0
+
+  output:
+    tables: "results/tables"
+    figures: "results/figures"
+    reports: "results/reports"

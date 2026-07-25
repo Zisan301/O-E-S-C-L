@@ -7,15 +7,16 @@ base_config: "config/day8_q3_band_comparison_config.yaml"
 day10:
   # Main publication-strength cases. Keep C and S as primary because they are
   # physically cleaner than the simplified C+S stress scenario.
+  # Points are the corrected Day-8 BMD-GMI/AIR accepted operating points.
   accepted_points:
     - scenario_group: "C"
       spans: 10
       launch_power_dbm: 2.0
-      pcs_nu: 0.36
+      pcs_nu: 0.24
     - scenario_group: "S"
       spans: 12
-      launch_power_dbm: -2.0
-      pcs_nu: 0.36
+      launch_power_dbm: 2.0
+      pcs_nu: 0.32
 
   # C+S may be enabled for supplementary stress evidence only.
   include_cs_stress_case: false

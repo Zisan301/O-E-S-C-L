@@ -29,20 +29,19 @@ The C+S case remains a simplified stress scenario unless enabled and externally 
 
 - Symbol-count stability gate passed: `True`
 - External reference gate passed: `False`
-- Internal GN-style sanity RMSE: `6.3280 dB`
+- Internal GN-style sanity RMSE: `4.2140 dB`
 
 ## Symbol-count stability summary
 
 | scenario_group   |   low_symbol_count |   high_symbol_count |   low_gmi_gain |   high_gmi_gain |   gmi_gain_drift |   abs_gmi_gain_drift |   relative_gmi_gain_drift | largest_count_positive_gain   | passed_symbol_stability   | reason   |
 |:-----------------|-------------------:|--------------------:|---------------:|----------------:|-----------------:|---------------------:|--------------------------:|:------------------------------|:--------------------------|:---------|
-| C                |              16384 |               32768 |       0.047762 |        0.04149  |        -0.006272 |             0.006272 |                  0.151169 | True                          | True                      | passed   |
-| S                |              16384 |               32768 |       0.065027 |        0.060458 |        -0.004569 |             0.004569 |                  0.075578 | True                          | True                      | passed   |
+| C                |              32768 |               65536 |       0.020679 |        0.020917 |         0.000238 |             0.000238 |                  0.011375 | True                          | True                      | passed   |
 
 ## External reference check
 
-| status                 | expected_csv_path                        | message                                                                                                        |
-|:-----------------------|:-----------------------------------------|:---------------------------------------------------------------------------------------------------------------|
-| reference_file_missing | validation_data\gnpy_day10_reference.csv | Copy validation_data/gnpy_day10_reference_template.csv to this path, fill reference_gsnr_db, and rerun Day-10. |
+| status             | scenario_group   | band   |   spans |   launch_power_dbm | reference_model         |   reference_gsnr_db |   oescl_uniform_gsnr_db |   gsnr_error_db |   external_gsnr_rmse_db | passed_external_reference_gate   |
+|:-------------------|:-----------------|:-------|--------:|-------------------:|:------------------------|--------------------:|------------------------:|----------------:|------------------------:|:---------------------------------|
+| reference_compared | C                | C      |      10 |                  2 | GNPy_9ch_center_channel |               18.78 |                 12.8631 |        -5.91695 |                 5.91695 | False                            |
 
 ## Correct manuscript claim after Day-10
 

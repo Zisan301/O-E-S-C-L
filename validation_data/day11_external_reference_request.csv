@@ -1,0 +1,2 @@
+scenario_group,band,spans,span_length_km,launch_power_dbm,baud_rate_gbaud,channel_spacing_ghz,center_nm,attenuation_db_per_km,dispersion_ps_nm_km,noise_figure_db,gamma_w_inv_km,reference_model,reference_gsnr_db,oescl_uniform_gsnr_db_for_orientation_only,notes
+C,C,10,80.0,2.0,64.0,75.0,1550.0,0.19,16.7,5.0,1.25,GNPy,,12.863055309488345,Mean over 10 seeds. For orientation only; do not copy as external reference.

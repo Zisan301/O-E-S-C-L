@@ -1,0 +1,29 @@
+﻿project:
+  name: "O-E-S-C-L"
+  validation_stage: "Day-12 GNPy external alignment sweep"
+
+base_config: "config/day8_q3_band_comparison_config.yaml"
+
+day12:
+  scenario_group: "C"
+  band: "C"
+  spans_list: [6, 8, 10, 12]
+  launch_power_dbm: 2.0
+  pcs_nu: 0.0
+  symbols: 32768
+  seeds: [1, 2, 3, 4, 5]
+  ssfm_steps_per_span: 8
+
+  gnpy:
+    span_length_km: 80.0
+    attenuation_db_per_km: 0.19
+    noise_figure_db: 5.0
+    center_nm: 1550.0
+    baud_rate_gbaud: 64.0
+    channel_spacing_ghz: 75.0
+    channels: 9
+
+  output:
+    tables: "results/tables"
+    reports: "results/reports"
+    validation_data: "validation_data"
