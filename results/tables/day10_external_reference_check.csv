@@ -1,2 +1,2 @@
 status,expected_csv_path,message
-reference_file_missing,validation_data\gnpy_day10_reference.csv,"Copy validation_data/gnpy_day10_reference_template.csv to this path, fill reference_gsnr_db, and rerun Day-10."
+reference_file_present_but_empty,validation_data\gnpy_day10_reference.csv,reference_gsnr_db values were empty or no matching cases were found.
