@@ -40,7 +40,15 @@ The main contributions are:
 
 \section{Related Work}
 
-This section will be completed with verified references on PCS, coherent optical systems, GN/EGN modelling, GNPy, nonlinear compensation and neural equalization. The final version must compare the proposed workflow against uniform modulation, PCS-only evaluation, neural-only mitigation where applicable and uncalibrated external reference tools.
+PCS has been widely studied as a rate-adaptation and reach-improvement technique for coherent optical transmission systems. Prior work has shown that shaping the transmitted symbol distribution can improve capacity and enable flexible operation without necessarily changing the modulation format \cite{buchali2015pcs64qam,yankov2016constellation}. These studies motivate PCS as a meaningful degree of freedom for link-level trend evaluation.
+
+Analytical nonlinear-propagation models provide another important reference point. The Gaussian-noise (GN) model is widely used to approximate nonlinear interference in uncompensated coherent optical systems \cite{poggiolini2012gn}. The enhanced GN model further refines nonlinear-interference prediction and discusses accuracy--complexity trade-offs \cite{carena2014egn}. These models are useful baselines because they provide physically motivated references for link-quality estimation without requiring exhaustive waveform simulation.
+
+GNPy provides an open-source physical-layer-aware planning and quality-of-transmission workflow for optical networks \cite{ferrari2020gnpy}. In this paper, GNPy is used as an external calibration diagnostic rather than as proof of direct absolute agreement. This distinction is important because the current framework exhibits a conservative raw GSNR offset relative to GNPy before calibration.
+
+Nonlinear compensation has also been studied using digital backpropagation and machine-learning-based processing. Digital backpropagation jointly addresses dispersion and nonlinear impairments in coherent detection systems \cite{ip2008dbp}. Machine-learning methods have been investigated for optical performance monitoring, nonlinear compensation and receiver-side processing \cite{zibar2016ml,lau2018mlopm,tizikara2021opm,bakhshali2023nnnlic}. These works motivate including neural-only and combined PCS-plus-neural configurations as baselines when the corresponding data are available.
+
+The present manuscript differs from these prior directions by focusing on claim-controlled, reproducible calibrated trend evaluation. The objective is not to replace full physical modelling or measurement-based assessment, but to provide a transparent workflow that reports raw mismatch, calibrated diagnostic agreement, stability checks and limitations together.
 
 \section{System Model and Calibrated Surrogate Framework}
 
@@ -53,6 +61,21 @@ The manuscript must clearly distinguish:
     \item offset-calibrated external diagnostic agreement;
     \item limitations of the normalized surrogate representation.
 \end{itemize}
+
+\section{Baseline and Comparison Design}
+
+The comparison design separates shaping, learned mitigation and external calibration effects. The minimum baseline set is:
+\begin{itemize}
+    \item \textbf{Uniform modulation:} the unshaped reference case.
+    \item \textbf{PCS-only:} isolates shaping gain from learned mitigation.
+    \item \textbf{Neural-only mitigation:} isolates receiver-side or mitigation gain without shaping, where available.
+    \item \textbf{PCS plus neural mitigation:} evaluates the combined configuration, where available.
+    \item \textbf{Raw GNPy reference:} reports the uncalibrated external mismatch.
+    \item \textbf{Offset-calibrated GNPy diagnostic:} reports calibrated trend agreement after applying one transparent offset.
+    \item \textbf{Computational cost:} reports runtime or complexity where available, so accuracy and cost are not mixed.
+\end{itemize}
+
+This comparison structure is designed to avoid attributing all gains to a single mechanism. It also ensures that calibration is reported explicitly rather than hidden inside the final metric.
 
 \section{Validation Methodology}
 
