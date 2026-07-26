@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -85,6 +86,18 @@ CASES = [
 def ensure_dir(path: Path) -> Path:
     path.mkdir(parents=True, exist_ok=True)
     return path
+
+
+def clean_stale_day14_dirs() -> None:
+    if not VALIDATION_DIR.exists():
+        return
+
+    active_case_ids = {str(case["case_id"]) for case in CASES}
+
+    for child in VALIDATION_DIR.iterdir():
+        if child.is_dir() and child.name not in active_case_ids:
+            print(f"Removing stale Day-14 directory: {child.relative_to(PROJECT_ROOT)}")
+            shutil.rmtree(child)
 
 
 def run_gnpy_case(case: dict) -> tuple[float, Path]:
@@ -240,6 +253,7 @@ def main() -> None:
     ensure_dir(TABLES_DIR)
     ensure_dir(REPORTS_DIR)
     ensure_dir(VALIDATION_DIR)
+    clean_stale_day14_dirs()
 
     if not BASE_CONFIG.exists():
         raise FileNotFoundError(f"Missing base config: {BASE_CONFIG}")
