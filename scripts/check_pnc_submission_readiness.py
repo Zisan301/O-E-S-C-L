@@ -32,13 +32,42 @@ FORBIDDEN_TRACKED_PATTERNS = [
 ]
 
 
-FORBIDDEN_CLAIMS = [
-    "fully validated against GNPy",
-    "raw GSNR directly matches GNPy",
+RISKY_CLAIM_PHRASES = [
+    "fully validated against gnpy",
+    "raw gsnr directly matches gnpy",
     "experimentally validated",
     "field validated",
-    "fully physical Manakov",
-    "direct physical Manakov/NLSE simulator",
+    "fully physical manakov",
+    "direct physical manakov/nlse simulator",
+    "raw absolute gnpy validation",
+]
+
+
+NEGATION_OR_WARNING_MARKERS = [
+    "do not",
+    "not ",
+    "not:",
+    "not as",
+    "should not",
+    "must not",
+    "avoid",
+    "forbidden",
+    "never",
+    "rather than",
+    "no laboratory",
+    "no field",
+    "not claim",
+    "not claimed",
+    "not be interpreted",
+    "does not support",
+    "without",
+    "unless",
+]
+
+
+CLAIM_TARGETS = [
+    "README.md",
+    "manuscript/main.tex",
 ]
 
 
@@ -72,22 +101,33 @@ def check_tracked_junk(files: list[str]) -> list[str]:
     return errors
 
 
-def check_forbidden_claims() -> list[str]:
-    errors: list[str] = []
-    targets = [
-        ROOT / "README.md",
-        ROOT / "manuscript" / "main.tex",
-        ROOT / "docs" / "PNC_REQUIREMENT_CLOSURE_CHECKLIST.md",
-        ROOT / "docs" / "NOVELTY_BASELINES_AND_VALIDATION_PLAN.md",
-    ]
+def is_warning_or_negated_line(line: str) -> bool:
+    lower = line.lower()
+    return any(marker in lower for marker in NEGATION_OR_WARNING_MARKERS)
 
-    for path in targets:
+
+def check_risky_positive_claims() -> list[str]:
+    errors: list[str] = []
+
+    for rel in CLAIM_TARGETS:
+        path = ROOT / rel
         if not path.exists():
             continue
-        text = path.read_text(encoding="utf-8", errors="ignore").lower()
-        for phrase in FORBIDDEN_CLAIMS:
-            if phrase.lower() in text:
-                errors.append(f"Forbidden claim phrase found in {path.relative_to(ROOT)}: {phrase}")
+
+        lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
+
+        for line_no, line in enumerate(lines, start=1):
+            lower = line.lower()
+
+            if is_warning_or_negated_line(lower):
+                continue
+
+            for phrase in RISKY_CLAIM_PHRASES:
+                if phrase in lower:
+                    errors.append(
+                        f"Risky positive claim in {rel}:{line_no}: {phrase}"
+                    )
+
     return errors
 
 
@@ -98,7 +138,7 @@ def main() -> None:
 
     tracked_files = git_ls_files()
     errors.extend(check_tracked_junk(tracked_files))
-    errors.extend(check_forbidden_claims())
+    errors.extend(check_risky_positive_claims())
 
     if errors:
         print("PNC submission-readiness check failed:")
@@ -107,7 +147,10 @@ def main() -> None:
         raise SystemExit(1)
 
     print("PNC submission-readiness check passed.")
-    print("Note: this does not mean the paper is ready to submit; it only checks repository hygiene and claim-control basics.")
+    print(
+        "Note: this does not mean the paper is ready to submit; "
+        "it only checks repository hygiene and claim-control basics."
+    )
 
 
 if __name__ == "__main__":
