@@ -1,0 +1,16 @@
+{
+  "Edfa": [
+    {
+      "type_variety": "day12_nf_fixed_gain",
+      "type_def": "fixed_gain",
+      "gain_flatmax": 19.6,
+      "gain_min": 12.600000000000001,
+      "p_max": 23,
+      "nf0": 5.5,
+      "out_voa_auto": false,
+      "allowed_for_design": false,
+      "f_min": 196000000000000.0,
+      "f_max": 202000000000000.0
+    }
+  ]
+}
