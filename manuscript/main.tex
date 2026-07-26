@@ -111,6 +111,8 @@ The Day-12 multi-span alignment sweep found a mean O-E-S-C-L minus GNPy offset o
 
 The Day-13 offset-calibrated diagnostic applied a constant +6.152843 dB correction. The calibrated RMSE was 0.284458 dB and the leave-one-out RMSE was 0.379277 dB. These results support calibrated trend agreement but not raw absolute validation.
 
+\input{tables/validation_summary_table}
+
 \section{Discussion}
 
 The results support the use of the framework for calibrated PCS trend analysis. They do not support claims of raw absolute GNPy validation or experimental validation. The main value of the workflow is transparent claim-controlled evaluation, where calibrated agreement and raw disagreement are both reported.
@@ -128,7 +130,20 @@ The current framework has several limitations:
 
 \section{Reproducibility}
 
-The repository includes a root README, dependency lock file, smoke test and curated validation reports. The smoke test checks the presence of key validation artifacts and verifies the Day-13 calibrated and leave-one-out RMSE values.
+The repository includes a root README, dependency lock file, smoke test, claim-control checker and curated validation reports. The smoke test checks the presence of key validation artifacts and verifies the Day-13 calibrated and leave-one-out RMSE values.
+
+The manuscript tables are generated using:
+\begin{verbatim}
+python scripts\generate_manuscript_artifacts.py
+\end{verbatim}
+
+Repository hygiene and claim-control basics are checked using:
+\begin{verbatim}
+python scripts\smoke_test_reproducibility.py
+python scripts\check_pnc_submission_readiness.py
+\end{verbatim}
+
+These checks do not imply that the manuscript is ready for submission; they only verify that the current repository state preserves the curated evidence and avoids selected overclaiming patterns.
 
 \section{Conclusion}
 
