@@ -16,7 +16,7 @@
 \affil*[1]{\orgdiv{Department}, \orgname{Institution}, \orgaddress{\country{Country}}}
 
 \abstract{
-Probabilistic constellation shaping (PCS) is a practical method for improving the information-rate efficiency of coherent optical communication systems, but evaluating PCS trends across multiband link scenarios can require a careful balance between modelling cost, reproducibility and physical fidelity. This paper presents a calibrated surrogate framework for evaluating PCS gain trends in coherent optical link scenarios. The framework combines repeated-seed numerical evaluation, symbol-count stability checks and external GNPy-based calibration diagnostics. The work explicitly separates raw absolute agreement from calibrated diagnostic agreement. In the current evidence set, raw absolute GSNR differs from GNPy by a conservative near-constant offset, while a single offset-calibrated diagnostic aligns the C-band multi-span GSNR trend with sub-dB error. The strongest validated C-band diagnostic reports a calibrated RMSE of 0.284458 dB and leave-one-out RMSE of 0.379277 dB. The manuscript therefore positions the method as a reproducible calibrated surrogate workflow rather than a fully physical Manakov/NLSE split-step Fourier transmission simulator or an experimentally validated system model. The resulting framework is useful for transparent PCS trend evaluation, baseline comparison and reproducibility-oriented system-performance studies, while highlighting the additional physical validation required before making direct absolute-performance claims.
+Probabilistic constellation shaping (PCS) is a practical method for improving information-rate efficiency in coherent optical communication systems, but evaluating PCS trends across link scenarios requires careful separation between modelling fidelity, calibration and reproducibility. This paper presents a calibrated surrogate framework for PCS trend evaluation in coherent optical link scenarios. The framework combines repeated-seed numerical evaluation, symbol-count stability checks, baseline separation and external GNPy-based calibration diagnostics. The work explicitly distinguishes raw absolute GSNR comparison from offset-calibrated diagnostic agreement. In the strongest C-band span-count diagnostic, raw GSNR differs from GNPy by a conservative near-constant offset; after applying one transparent offset, the calibrated diagnostic reports an RMSE of 0.284458 dB and a leave-one-out RMSE of 0.379277 dB. A broader Day-14 starter stress test further shows that this fixed offset does not transfer cleanly to new operating points and that automatically generated S-band GNPy cases require dedicated equipment and spectrum configuration. The manuscript therefore positions the method as a reproducible calibrated surrogate workflow rather than a fully physical Manakov/NLSE split-step simulator, raw GNPy-validated model or experimentally validated transmission system. The resulting framework is useful for transparent PCS trend evaluation and claim-controlled system-performance studies, while identifying the additional validation required before broader absolute-performance claims can be made.
 }
 
 \keywords{coherent optical communication, probabilistic constellation shaping, calibrated surrogate modelling, GNPy, GSNR, multiband optical links}
@@ -120,6 +120,28 @@ The Day-13 offset-calibrated diagnostic applied a constant +6.152843 dB correcti
 
 \input{tables/validation_summary_table}
 
+\subsection{Evidence-to-claim mapping}
+
+Table~\ref{tab:evidence-claim-map} summarizes the boundary between supported claims and unsupported overclaims. This mapping is included to make the calibrated-surrogate positioning explicit.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Evidence-to-claim mapping for the current manuscript.}
+\label{tab:evidence-claim-map}
+\begin{tabular}{p{0.24\linewidth} p{0.33\linewidth} p{0.33\linewidth}}
+\toprule
+Evidence item & Supported interpretation & Claim boundary \\
+\midrule
+Repeated-seed and symbol-count checks & PCS trend behaviour is stable for the tested settings & Does not prove universal PCS gain across all links \\
+Day-11 raw GNPy comparison & Raw absolute GSNR mismatch is visible and quantified & Does not support raw absolute GNPy validation \\
+Day-12 span sweep & C-band raw mismatch is approximately offset-like across the tested span counts & Does not establish physical equivalence to GNPy \\
+Day-13 offset calibration & Tested C-band span-count trend has sub-dB calibrated diagnostic agreement & Calibration must be reported explicitly \\
+Day-14 starter stress test & Broader operating points expose limited offset transfer and S-band setup limitations & Does not support full C/S-band external validation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Discussion}
 
 The results support the use of the framework for calibrated PCS trend analysis. They do not support claims of raw absolute GNPy validation or experimental validation. The main value of the workflow is transparent claim-controlled evaluation, where calibrated agreement and raw disagreement are both reported.
@@ -130,7 +152,8 @@ The current framework has several limitations:
 \begin{itemize}
     \item it is a calibrated surrogate rather than a fully physical Manakov/NLSE simulator;
     \item raw absolute GSNR agreement with GNPy is weak before calibration;
-    \item broader independent validation across span count, baud rate, launch power, channel loading and fiber parameters is still needed;
+    \item Day-14 shows that the fixed Day-13 offset does not transfer cleanly to broader operating points;
+    \item dedicated S-band GNPy equipment and spectrum configuration is still needed before reporting S-band external-reference agreement;
     \item no laboratory or field measurement validation is claimed;
     \item calibrated agreement should not be interpreted as direct physical proof.
 \end{itemize}
