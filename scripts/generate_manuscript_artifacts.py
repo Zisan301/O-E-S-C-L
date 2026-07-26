@@ -13,6 +13,7 @@ SOURCE_TABLES = {
     "day12_external_alignment_sweep.csv": ROOT / "results" / "tables" / "day12_external_alignment_sweep.csv",
     "day13_external_offset_calibration.csv": ROOT / "results" / "tables" / "day13_external_offset_calibration.csv",
     "day13_external_offset_calibration_loo.csv": ROOT / "results" / "tables" / "day13_external_offset_calibration_loo.csv",
+    "day14_starter_independent_validation.csv": ROOT / "results" / "tables" / "day14_starter_independent_validation.csv",
 }
 
 
@@ -22,30 +23,21 @@ def require(path: Path) -> None:
 
 
 def rmse(s: pd.Series) -> float:
-    v = s.astype(float)
+    v = pd.to_numeric(s, errors="coerce").dropna()
     return float((v.pow(2).mean()) ** 0.5)
 
 
 def mae(s: pd.Series) -> float:
-    v = s.astype(float)
+    v = pd.to_numeric(s, errors="coerce").dropna()
     return float(v.abs().mean())
 
 
 def max_abs(s: pd.Series) -> float:
-    v = s.astype(float)
+    v = pd.to_numeric(s, errors="coerce").dropna()
     return float(v.abs().max())
 
 
-def main() -> None:
-    print("Generating manuscript artifacts...")
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    for name, src in SOURCE_TABLES.items():
-        require(src)
-        dst = OUT_DIR / name
-        shutil.copyfile(src, dst)
-        print(f"Copied {src.relative_to(ROOT)} -> {dst.relative_to(ROOT)}")
-
+def write_day13_summary() -> None:
     day13 = pd.read_csv(SOURCE_TABLES["day13_external_offset_calibration.csv"])
     loo = pd.read_csv(SOURCE_TABLES["day13_external_offset_calibration_loo.csv"])
 
@@ -75,7 +67,6 @@ def main() -> None:
 
     md_path = OUT_DIR / "validation_summary_table.md"
     tex_path = OUT_DIR / "validation_summary_table.tex"
-    manifest_path = OUT_DIR / "MANIFEST.md"
 
     summary.to_markdown(md_path, index=False)
 
@@ -90,6 +81,76 @@ def main() -> None:
     )
     tex_path.write_text(latex, encoding="utf-8")
 
+    print(f"Wrote {md_path.relative_to(ROOT)}")
+    print(f"Wrote {tex_path.relative_to(ROOT)}")
+
+
+def write_day14_summary() -> None:
+    day14 = pd.read_csv(SOURCE_TABLES["day14_starter_independent_validation.csv"])
+
+    if "status" not in day14.columns:
+        raise RuntimeError("Missing Day-14 status column.")
+
+    ok = day14[day14["status"] == "ok"].copy()
+    failed = day14[day14["status"] != "ok"].copy()
+
+    if ok.empty:
+        raise RuntimeError("No successful Day-14 rows available.")
+
+    raw_rmse = rmse(ok["raw_error_db"])
+    calibrated_rmse = rmse(ok["calibrated_error_db"])
+    raw_mae = mae(ok["raw_error_db"])
+    calibrated_mae = mae(ok["calibrated_error_db"])
+    raw_max = max_abs(ok["raw_error_db"])
+    calibrated_max = max_abs(ok["calibrated_error_db"])
+
+    summary = pd.DataFrame(
+        [
+            {
+                "Day-14 item": "Successful cases",
+                "Result": f"{len(ok)} of {len(day14)} cases completed",
+                "Interpretation": "Starter broader validation produced usable C-band diagnostic rows",
+            },
+            {
+                "Day-14 item": "Failed generated cases",
+                "Result": f"{len(failed)} of {len(day14)} cases failed",
+                "Interpretation": "Generated S-band GNPy setup requires dedicated equipment/spectrum configuration",
+            },
+            {
+                "Day-14 item": "Raw successful-case error",
+                "Result": f"RMSE {raw_rmse:.6f} dB; MAE {raw_mae:.6f} dB; max {raw_max:.6f} dB",
+                "Interpretation": "Raw disagreement remains material outside the Day-12/Day-13 span-only setting",
+            },
+            {
+                "Day-14 item": "Fixed-offset transfer test",
+                "Result": f"RMSE {calibrated_rmse:.6f} dB; MAE {calibrated_mae:.6f} dB; max {calibrated_max:.6f} dB",
+                "Interpretation": "The Day-13 fixed offset does not transfer cleanly to the broader starter matrix",
+            },
+        ]
+    )
+
+    md_path = OUT_DIR / "day14_starter_summary_table.md"
+    tex_path = OUT_DIR / "day14_starter_summary_table.tex"
+
+    summary.to_markdown(md_path, index=False)
+
+    latex = summary.to_latex(
+        index=False,
+        escape=True,
+        caption=(
+            "Summary of the Day-14 starter broader-validation stress test. "
+            "The results are limitation evidence and must not be reported as full C/S-band external validation."
+        ),
+        label="tab:day14-starter-summary",
+    )
+    tex_path.write_text(latex, encoding="utf-8")
+
+    print(f"Wrote {md_path.relative_to(ROOT)}")
+    print(f"Wrote {tex_path.relative_to(ROOT)}")
+
+
+def write_manifest() -> None:
+    manifest_path = OUT_DIR / "MANIFEST.md"
     manifest_lines = [
         "# Manuscript Table Manifest",
         "",
@@ -97,24 +158,45 @@ def main() -> None:
         "",
         "`python scripts\\\\generate_manuscript_artifacts.py`",
         "",
-        "Generated artifacts:",
+        "Copied source artifacts:",
         "",
         "- day12_external_alignment_sweep.csv",
         "- day13_external_offset_calibration.csv",
         "- day13_external_offset_calibration_loo.csv",
+        "- day14_starter_independent_validation.csv",
+        "",
+        "Generated manuscript tables:",
+        "",
         "- validation_summary_table.md",
         "- validation_summary_table.tex",
+        "- day14_starter_summary_table.md",
+        "- day14_starter_summary_table.tex",
         "",
         "Claim policy:",
         "",
-        "These tables support calibrated diagnostic agreement only. They must not be used to claim raw absolute GNPy validation or experimental validation.",
+        "Day-13 tables support calibrated diagnostic agreement only. They must not be used to claim raw absolute GNPy validation or experimental validation.",
+        "",
+        "Day-14 tables are limitation/stress-test evidence. They must not be used to claim full C/S-band external validation.",
         "",
     ]
     manifest_path.write_text("\n".join(manifest_lines), encoding="utf-8")
-
-    print(f"Wrote {md_path.relative_to(ROOT)}")
-    print(f"Wrote {tex_path.relative_to(ROOT)}")
     print(f"Wrote {manifest_path.relative_to(ROOT)}")
+
+
+def main() -> None:
+    print("Generating manuscript artifacts...")
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    for name, src in SOURCE_TABLES.items():
+        require(src)
+        dst = OUT_DIR / name
+        shutil.copyfile(src, dst)
+        print(f"Copied {src.relative_to(ROOT)} -> {dst.relative_to(ROOT)}")
+
+    write_day13_summary()
+    write_day14_summary()
+    write_manifest()
+
     print("Manuscript artifact generation completed.")
 
 

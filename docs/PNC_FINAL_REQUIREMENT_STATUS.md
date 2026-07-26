@@ -24,7 +24,7 @@ This document summarizes which submission-readiness requirements are closed, par
 | Requirement | Status | Remaining work |
 |---|---|---|
 | One-command reproduction | Partial | Current script regenerates manuscript artifacts from curated validated outputs. A heavier script should regenerate every final figure/table from raw simulation commands. |
-| Broader independent validation | Partial | Day-14 validation matrix is planned in config/day14_independent_validation_matrix.yaml but not executed yet. |
+| Broader independent validation | Partial | Day-14 starter validation was executed. Two broader C-band cases completed, two generated S-band GNPy cases failed, and the Day-13 fixed offset did not transfer cleanly. This is limitation evidence, not full broader validation success. |
 | Stronger baseline comparison | Partial | Baseline structure exists, but final tables must be filled with available or newly generated data. |
 | C/S/C+S integration | Partial | Existing evidence must be integrated carefully without overclaiming raw physical validation. |
 | Springer submission formatting | Partial | main.tex exists, but final compilation, author metadata, figure placement and page-limit check are still needed. |

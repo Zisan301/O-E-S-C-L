@@ -135,6 +135,18 @@ The current framework has several limitations:
     \item calibrated agreement should not be interpreted as direct physical proof.
 \end{itemize}
 
+
+\section{Broader Validation Stress Test}
+
+A Day-14 starter validation was added to test whether the Day-13 calibrated diagnostic generalizes beyond the original C-band span-count sweep. The starter matrix varies span count, launch power, channel loading, baud rate and band configuration.
+
+The result is intentionally reported as a stress test rather than as a success-only validation. Two C-band cases completed successfully, while the automatically generated S-band GNPy cases failed under the current equipment and spectrum-generation setup. In the successful C-band rows, the fixed Day-13 offset did not transfer cleanly: the successful-case raw RMSE was 3.309904 dB, while the fixed-offset calibrated RMSE was 4.138553 dB.
+
+\input{tables/day14_starter_summary_table}
+
+Therefore, Day-14 is used as limitation evidence. It shows that the Day-13 C-band offset-calibrated diagnostic should not be generalized to full C/S-band external validation without a dedicated S-band GNPy configuration and broader calibration design.
+
+
 \section{Reproducibility}
 
 The repository includes a root README, dependency lock file, smoke test, claim-control checker and curated validation reports. The smoke test checks the presence of key validation artifacts and verifies the Day-13 calibrated and leave-one-out RMSE values.
