@@ -57,3 +57,10 @@ A calibrated surrogate framework for probabilistic constellation shaping trend e
 - raw GNPy-validated simulator;
 - experimentally validated optical transmission system;
 - universal multiband absolute-GSNR predictor.
+
+
+## Scope-freeze update
+
+After Day-14, the submission scope is frozen as a calibrated surrogate PCS trend-evaluation framework with C-band calibrated diagnostic evidence and broader Day-14 limitation/stress-test evidence. The manuscript must not claim full C/S-band external validation.
+
+See `docs/PNC_SUBMISSION_SCOPE_FREEZE.md`.

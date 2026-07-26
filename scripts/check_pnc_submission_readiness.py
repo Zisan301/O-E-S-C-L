@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     "docs/NOVELTY_BASELINES_AND_VALIDATION_PLAN.md",
     "docs/PHYSICAL_MODEL_CLARIFICATION.md",
     "docs/PNC_FINAL_REQUIREMENT_STATUS.md",
+    "docs/PNC_SUBMISSION_SCOPE_FREEZE.md",
     "config/day14_independent_validation_matrix.yaml",
     "manuscript/main.tex",
     "manuscript/references.bib",
