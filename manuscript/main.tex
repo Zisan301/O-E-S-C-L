@@ -31,11 +31,12 @@ This paper addresses that gap by presenting a reproducible calibrated surrogate 
 
 The main contributions are:
 \begin{itemize}
-    \item a reproducible PCS trend-evaluation workflow for coherent optical link scenarios;
-    \item repeated-seed and symbol-count stability checks for PCS gain trends;
-    \item explicit separation between raw absolute GSNR agreement and calibrated external diagnostic agreement;
-    \item a GNPy-based external calibration diagnostic showing that a conservative near-constant offset explains the C-band multi-span raw GSNR mismatch;
-    \item claim-controlled reporting suitable for a calibrated surrogate modelling study.
+    \item a reproducible calibrated surrogate workflow for PCS trend evaluation in coherent optical link scenarios;
+    \item repeated-seed and symbol-count stability checks that reduce the risk of reporting short-sequence or seed-specific PCS artifacts;
+    \item explicit separation between raw absolute GSNR disagreement and offset-calibrated external diagnostic agreement;
+    \item a GNPy-based C-band external calibration diagnostic showing that the raw GSNR mismatch is largely explained by a conservative near-constant offset across span count;
+    \item a baseline structure that separates uniform modulation, PCS-only behaviour, neural-only mitigation where available, combined PCS-plus-neural configurations and external-reference diagnostics;
+    \item claim-controlled reporting that states the current physical limitations rather than presenting the surrogate as a direct Manakov/NLSE simulator.
 \end{itemize}
 
 \section{Related Work}
@@ -54,7 +55,13 @@ The present manuscript differs from these prior directions by focusing on claim-
 
 The framework evaluates coherent-link performance metrics under controlled PCS and baseline configurations. The current implementation should be interpreted as a calibrated surrogate workflow. In particular, the waveform and SSFM-like components use normalized or effective scaling choices and should not be presented as a fully physical Manakov/NLSE solver.
 
-The manuscript must clearly distinguish:
+\subsection{Physical interpretation}
+
+The model uses effective propagation and impairment parameters to study relative trends. Dispersion, nonlinearity, noise accumulation and learned mitigation are therefore interpreted as components of a calibrated surrogate workflow. This interpretation is different from a fully parameterized physical propagation model using independently specified $\beta_2$, $\gamma$, attenuation, amplifier gain, noise figure and Raman/SRS dynamics.
+
+This distinction affects the validation language. Raw absolute GSNR should not be interpreted as directly validated against GNPy. Instead, GNPy is used as an external calibration diagnostic. The raw C-band comparison shows a conservative offset, while the offset-calibrated diagnostic tests whether the span-dependent trend is consistent after one transparent correction.
+
+The manuscript therefore distinguishes:
 \begin{itemize}
     \item trend-level PCS evaluation;
     \item raw absolute GSNR comparison;

@@ -15,6 +15,7 @@ REQUIRED_FILES = [
     "scripts/smoke_test_reproducibility.py",
     "docs/PNC_REQUIREMENT_CLOSURE_CHECKLIST.md",
     "docs/NOVELTY_BASELINES_AND_VALIDATION_PLAN.md",
+    "docs/PHYSICAL_MODEL_CLARIFICATION.md",
     "config/day14_independent_validation_matrix.yaml",
     "manuscript/main.tex",
     "manuscript/references.bib",
