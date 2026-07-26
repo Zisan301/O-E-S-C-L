@@ -1,0 +1,15 @@
+COMMAND:
+gnpy-transmission-example -e C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\gnpy\example-data\eqpt_config.json --extra-equipment E:\VS Code\O+E+S+C+L\validation_data\day14\day14_S_8sp_1dBm_9ch_32G\day12_gnpy_c_8span_extra_equipment.json --spectrum E:\VS Code\O+E+S+C+L\validation_data\day14\day14_S_8sp_1dBm_9ch_32G\day12_gnpy_c_8span_spectrum.json --show-channels -po 1.0 E:\VS Code\O+E+S+C+L\validation_data\day14\day14_S_8sp_1dBm_9ch_32G\day12_gnpy_c_8span_network.json Site_A Site_B
+
+STDOUT:
+User input for spectrum used for propagation instead of SI
+Power mode is set to True
+=> it can be modified in eqpt_config.json - Span
+
+
+STDERR:
+WARNING:gnpy.tools.json_io:
+	WARNING missing type_variety attribute in eqpt_config.json[Roadm]
+	default value is type_variety = default
+
+

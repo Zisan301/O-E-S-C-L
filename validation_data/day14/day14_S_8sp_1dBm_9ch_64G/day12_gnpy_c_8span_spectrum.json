@@ -1,0 +1,14 @@
+{
+  "spectrum": [
+    {
+      "f_min": 199561638666666.66,
+      "f_max": 200161638666666.66,
+      "slot_width": 75000000000.0,
+      "baud_rate": 64000000000.0,
+      "roll_off": 0.15,
+      "tx_osnr": 40,
+      "tx_power_dbm": 1.0,
+      "label": "day12-C-1550nm-64G-9ch-8span"
+    }
+  ]
+}

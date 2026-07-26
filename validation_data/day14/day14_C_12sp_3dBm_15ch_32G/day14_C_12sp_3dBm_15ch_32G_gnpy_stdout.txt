@@ -1,0 +1,345 @@
+COMMAND:
+gnpy-transmission-example -e C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\gnpy\example-data\eqpt_config.json --extra-equipment E:\VS Code\O+E+S+C+L\validation_data\day14\day14_C_12sp_3dBm_15ch_32G\day12_gnpy_c_12span_extra_equipment.json --spectrum E:\VS Code\O+E+S+C+L\validation_data\day14\day14_C_12sp_3dBm_15ch_32G\day12_gnpy_c_12span_spectrum.json --show-channels -po 3.0 E:\VS Code\O+E+S+C+L\validation_data\day14\day14_C_12sp_3dBm_15ch_32G\day12_gnpy_c_12span_network.json Site_A Site_B
+
+STDOUT:
+User input for spectrum used for propagation instead of SI
+Power mode is set to True
+=> it can be modified in eqpt_config.json - Span
+
+There are 12 fiber spans over 960 km between Site_A and Site_B
+
+Now propagating between Site_A and Site_B:
+Reference used for design: (Input optical power reference in span = 3.00dBm,
+                            spacing = 50.00GHz
+                            nb_channels = 76)
+
+Channels propagating: (Input optical power deviation in span = 0.00dB,
+                       spacing = 50.00GHz,
+                       transceiver output power = 3.00dBm,
+                       nb_channels = 15)
+Input optical power reference in span = [1;36;40m3.00 dBm[0m:
+Transceiver Site_A
+  GSNR (0.1nm, dB):          40.00
+  GSNR (signal bw, dB):      35.92
+  OSNR ASE (0.1nm, dB):      40.00
+  OSNR ASE (signal bw, dB):  35.92
+  CD (ps/nm):                0.00
+  PMD (ps):                  0.00
+  PDL (dB):                  0.00
+  Latency (ms):              0.00
+  Actual pch out (dBm):      3.00
+Fiber          Span1
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -12.20
+  actual pch out (dBm):        -12.20
+Edfa Edfa1
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     16.70
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         -0.44
+  Power Out (dBm):        16.26
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span2
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa2
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.06
+  Power Out (dBm):        16.26
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span3
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa3
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.06
+  Power Out (dBm):        16.26
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span4
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa4
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.06
+  Power Out (dBm):        16.26
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span5
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa5
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.06
+  Power Out (dBm):        16.26
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span6
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa6
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.06
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span7
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa7
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.50
+  output VOA (dB):        0.00
+Fiber          Span8
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.70
+Edfa Edfa8
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.51
+  output VOA (dB):        0.00
+Fiber          Span9
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.69
+Edfa Edfa9
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.51
+  output VOA (dB):        0.00
+Fiber          Span10
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.69
+Edfa Edfa10
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.51
+  output VOA (dB):        0.00
+Fiber          Span11
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.69
+Edfa Edfa11
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     15.20
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        16.27
+  Delta_P (dB):           -1.50
+  target pch (dBm):       1.50
+  actual pch out (dBm):   4.51
+  output VOA (dB):        0.00
+Fiber          Span12
+  type_variety:                SSMF
+  length (km):                 80.00
+  pad att_in (dB):             0.00
+  total loss (dB):             15.20
+  (includes conn loss (dB) in: 0.00 out: 0.00)
+  (conn loss out includes EOL margin defined in eqpt_config.json)
+  reference pch out (dBm):     -13.70
+  actual pch out (dBm):        -10.69
+Edfa Edfa12
+  type_variety:           day12_nf_fixed_gain
+  effective gain(dB):     14.70
+  (before att_in and before output VOA)
+  tilt-target(dB)         0.00
+  noise figure (dB):      5.00
+  (including att_in)
+  pad att_in (dB):        0.00
+  Power In (dBm):         1.07
+  Power Out (dBm):        15.77
+  Delta_P (dB):           -2.00
+  target pch (dBm):       1.00
+  actual pch out (dBm):   4.01
+  output VOA (dB):        0.00
+Transceiver Site_B
+  GSNR (0.1nm, dB):          15.77
+  GSNR (signal bw, dB):      11.68
+  OSNR ASE (0.1nm, dB):      30.64
+  OSNR ASE (signal bw, dB):  26.56
+  CD (ps/nm):                16032.00
+  PMD (ps):                  1.24
+  PDL (dB):                  0.00
+  Latency (ms):              4.70
+  Actual pch out (dBm):      3.00
+
+Transmission result for input optical power reference in span = 3.00 dBm:
+  Final GSNR (0.1 nm): [1;36;40m15.77 dB[0m
+
+The GSNR per channel at the end of the line is:
+Ch. #   Channel frequency (THz)       Channel power (dBm)    OSNR ASE (signal bw, dB)     SNR NLI (signal bw, dB)        GSNR (signal bw, dB)
+    1                 193.06449                      3.78                       26.59                       12.82                       12.64
+    2                 193.11449                      3.74                       26.57                       12.14                       11.98
+    3                 193.16449                      3.73                       26.56                       11.86                       11.71
+    4                 193.21449                      3.72                       26.56                       11.70                       11.56
+    5                 193.26449                      3.71                       26.55                       11.60                       11.46
+    6                 193.31449                      3.71                       26.55                       11.53                       11.40
+    7                 193.36449                      3.70                       26.55                       11.49                       11.36
+    8                 193.41449                      3.70                       26.55                       11.48                       11.34
+    9                 193.46449                      3.70                       26.55                       11.48                       11.35
+   10                 193.51449                      3.70                       26.55                       11.51                       11.38
+   11                 193.56449                      3.71                       26.55                       11.56                       11.43
+   12                 193.61449                      3.71                       26.55                       11.65                       11.51
+   13                 193.66449                      3.72                       26.55                       11.80                       11.66
+   14                 193.71449                      3.74                       26.56                       12.07                       11.92
+   15                 193.76449                      3.78                       26.57                       12.74                       12.56
+
+
+STDERR:
+WARNING:gnpy.tools.json_io:
+	WARNING missing type_variety attribute in eqpt_config.json[Roadm]
+	default value is type_variety = default
+
+
