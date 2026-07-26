@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -36,6 +37,13 @@ SPAN_LENGTH_KM = 80.0
 # S-band parameters already present in config/day8_q3_band_comparison_config.yaml.
 S_ATTENUATION_DB_PER_KM = 0.22
 S_NOISE_FIGURE_DB = 5.5
+
+# Approximate S-band equipment window for this starter diagnostic.
+# These bounds cover the small 1490--1520 nm smoke grid and keep the entire
+# channel slots inside the amplifier bandwidth. This is still a diagnostic
+# configuration, not a vendor-specific amplifier model.
+S_EDFA_F_MIN_HZ = 196.0e12
+S_EDFA_F_MAX_HZ = 202.0e12
 
 CASES = [
     {
@@ -90,6 +98,17 @@ def ensure_dir(path: Path) -> Path:
     return path
 
 
+def patch_extra_equipment_for_sband(extra_eqpt_path: Path) -> None:
+    """Add an explicit S-band frequency window to the generated EDFA variety."""
+    data = json.loads(extra_eqpt_path.read_text(encoding="utf-8"))
+
+    for edfa in data.get("Edfa", []):
+        edfa["f_min"] = S_EDFA_F_MIN_HZ
+        edfa["f_max"] = S_EDFA_F_MAX_HZ
+
+    extra_eqpt_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+
 def run_gnpy_case(case: dict) -> tuple[str, str, float | None, Path | None]:
     case_dir = ensure_dir(VALIDATION_DIR / str(case["case_id"]))
 
@@ -106,10 +125,13 @@ def run_gnpy_case(case: dict) -> tuple[str, str, float | None, Path | None]:
         launch_power_dbm=float(case["launch_power_dbm"]),
     )
 
+    patch_extra_equipment_for_sband(extra_eqpt)
+
     stdout_path = case_dir / f"{case['case_id']}_gnpy_stdout.txt"
 
     cmd = [
         "gnpy-transmission-example",
+        "-vv",
         "-e",
         str(eqpt),
         "--extra-equipment",
@@ -140,6 +162,7 @@ def run_gnpy_case(case: dict) -> tuple[str, str, float | None, Path | None]:
 
     combined = ""
     combined += "COMMAND:\n" + " ".join(cmd) + "\n\n"
+    combined += f"RETURN_CODE:\n{result.returncode}\n\n"
     combined += "STDOUT:\n" + result.stdout + "\n\n"
     combined += "STDERR:\n" + result.stderr + "\n"
     stdout_path.write_text(combined, encoding="utf-8")
@@ -254,6 +277,8 @@ def main() -> None:
             "seeds": ",".join(str(s) for s in SEEDS),
             "s_attenuation_db_per_km": S_ATTENUATION_DB_PER_KM,
             "s_noise_figure_db": S_NOISE_FIGURE_DB,
+            "s_edfa_f_min_hz": S_EDFA_F_MIN_HZ,
+            "s_edfa_f_max_hz": S_EDFA_F_MAX_HZ,
             "status": status,
             "failure_reason": failure_reason,
             "gnpy_reference_gsnr_db": gnpy_gsnr if gnpy_gsnr is not None else np.nan,
