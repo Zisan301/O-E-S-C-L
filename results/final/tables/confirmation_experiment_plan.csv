@@ -1,0 +1,151 @@
+plan_name,stage,scenario,seed,symbols,nu,spans,launch_power_dbm,allowed_to_select_operating_point,current_status,priority
+final_independent_confirmation_v1,discovery,C,1,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,2,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,3,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,4,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,5,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,6,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,7,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,8,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,9,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,C,10,32768,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,discovery,S,1,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,2,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,3,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,4,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,5,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,6,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,7,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,8,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,9,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,S,10,32768,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,discovery,C+S,1,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,2,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,3,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,4,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,5,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,6,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,7,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,8,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,9,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,discovery,C+S,10,32768,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C,11,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,12,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,13,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,14,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,15,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,16,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,17,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,18,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,19,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,C,20,65536,0.36,10,2,True,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,validation,S,11,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,12,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,13,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,14,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,15,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,16,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,17,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,18,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,19,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,S,20,65536,0.36,12,-2,True,strongest confirmed internal result,high
+final_independent_confirmation_v1,validation,C+S,11,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,12,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,13,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,14,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,15,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,16,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,17,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,18,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,19,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,validation,C+S,20,65536,0.36,12,0,True,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C,21,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,22,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,23,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,24,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,25,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,26,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,27,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,28,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,29,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,30,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,31,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,32,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,33,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,34,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,35,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,36,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,37,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,38,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,39,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,40,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,41,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,42,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,43,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,44,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,45,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,46,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,47,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,48,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,49,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,C,50,131072,0.36,10,2,False,positive discovery-stage result; borderline at larger-symbol confirmation,high
+final_independent_confirmation_v1,final_confirmation,S,21,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,22,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,23,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,24,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,25,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,26,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,27,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,28,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,29,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,30,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,31,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,32,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,33,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,34,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,35,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,36,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,37,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,38,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,39,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,40,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,41,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,42,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,43,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,44,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,45,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,46,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,47,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,48,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,49,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,S,50,131072,0.36,12,-2,False,strongest confirmed internal result,high
+final_independent_confirmation_v1,final_confirmation,C+S,21,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,22,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,23,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,24,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,25,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,26,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,27,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,28,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,29,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,30,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,31,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,32,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,33,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,34,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,35,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,36,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,37,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,38,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,39,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,40,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,41,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,42,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,43,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,44,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,45,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,46,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,47,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,48,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,49,131072,0.36,12,0,False,exploratory internal shaping result,highest
+final_independent_confirmation_v1,final_confirmation,C+S,50,131072,0.36,12,0,False,exploratory internal shaping result,highest

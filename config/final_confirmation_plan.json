@@ -1,0 +1,66 @@
+{
+    "plan_name":  "final_independent_confirmation_v1",
+    "purpose":  "Independent large-symbol confirmation of entropy-corrected PCS gains for C, S, and C+S.",
+    "symbol_rate_gbaud":  64,
+    "polarization_factor":  2,
+    "overhead_factor":  1.2,
+    "entropy_correction_bit_per_symbol":  0.02961,
+    "confidence_level":  0.95,
+    "minimum_confirmation_seeds":  20,
+    "preferred_confirmation_seeds":  30,
+    "minimum_symbols":  131072,
+    "preferred_symbols":  262144,
+    "claim_rule":  "A band is confirmed positive only if the lower 95 percent confidence bound of the entropy-corrected BMD gain is greater than zero.",
+    "stages":  [
+                   {
+                       "stage":  "discovery",
+                       "seed_start":  1,
+                       "seed_end":  10,
+                       "symbols":  32768,
+                       "allowed_to_select_operating_point":  true,
+                       "purpose":  "Broad grid search only."
+                   },
+                   {
+                       "stage":  "validation",
+                       "seed_start":  11,
+                       "seed_end":  20,
+                       "symbols":  65536,
+                       "allowed_to_select_operating_point":  true,
+                       "purpose":  "Reduced grid and final operating-point selection."
+                   },
+                   {
+                       "stage":  "final_confirmation",
+                       "seed_start":  21,
+                       "seed_end":  50,
+                       "symbols":  131072,
+                       "allowed_to_select_operating_point":  false,
+                       "purpose":  "Frozen-setting independent confirmation only."
+                   }
+               ],
+    "frozen_operating_points":  [
+                                    {
+                                        "scenario":  "C",
+                                        "nu":  0.36,
+                                        "spans":  10,
+                                        "launch_power_dbm":  2,
+                                        "current_status":  "positive discovery-stage result; borderline at larger-symbol confirmation",
+                                        "priority":  "high"
+                                    },
+                                    {
+                                        "scenario":  "S",
+                                        "nu":  0.36,
+                                        "spans":  12,
+                                        "launch_power_dbm":  -2,
+                                        "current_status":  "strongest confirmed internal result",
+                                        "priority":  "high"
+                                    },
+                                    {
+                                        "scenario":  "C+S",
+                                        "nu":  0.36,
+                                        "spans":  12,
+                                        "launch_power_dbm":  0,
+                                        "current_status":  "exploratory internal shaping result",
+                                        "priority":  "highest"
+                                    }
+                                ]
+}
