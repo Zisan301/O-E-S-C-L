@@ -77,3 +77,11 @@ validation_data/topology_verify/
 # Local Day-11/Day-12 GNPy scratch artifacts
 validation_data/day11_gnpy_*
 validation_data/day12_gnpy_*
+
+# Local Python environments
+.venv/
+venv/
+env/
+gnpy_env/
+__pycache__/
+*.pyc
