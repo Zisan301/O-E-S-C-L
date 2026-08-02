@@ -73,3 +73,7 @@ manuscript/sn-jnl.cls
 # Local topology verification scratch files
 scripts/topology_verify/
 validation_data/topology_verify/
+
+# Local Day-11/Day-12 GNPy scratch artifacts
+validation_data/day11_gnpy_*
+validation_data/day12_gnpy_*
