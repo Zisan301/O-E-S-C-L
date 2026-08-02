@@ -80,3 +80,19 @@ Do not claim: fully GNPy validated.
 Do not claim: raw GSNR directly matches GNPy.
 
 Do not claim: direct physical Manakov/NLSE SSFM simulator.
+
+<!-- OESCL_FINAL_CONFIRMATION_START -->
+## Final confirmation claim boundary
+
+The final independent confirmation run used 90 jobs: 30 seeds per scenario for C, S, and C+S.
+
+Final status:
+
+- C: not_positive (mean gain -0.014480, 95% CI [-0.017386, -0.011574])
+- C+S: borderline_inconclusive (mean gain 0.001546, 95% CI [-0.000687, 0.003778])
+- S: borderline_inconclusive (mean gain 0.000412, 95% CI [-0.001146, 0.001969])
+
+No scenario is confirmed positive under the final 95% confidence-bound rule. The project should be cited as a validation-aware framework for detecting non-robust discovery-stage PCS gains, not as a confirmed PCS-gain result.
+
+See: `docs/reproducibility/FINAL_CONFIRMATION_CLAIM_BOUNDARY.md`
+<!-- OESCL_FINAL_CONFIRMATION_END -->
