@@ -1,0 +1,6 @@
+﻿Repository: https://github.com/Zisan301/O-E-S-C-L.git
+Branch: improve/milestone-1-reproducibility
+Commit: b8a5261d9c2edea9c2752237ce91db610eb0ebb4
+
+Latest commits:
+b8a5261d Freeze final confirmation evidence and claim boundary 55002560 Add manuscript-ready final confirmation wording c615929a Add 30-seed final confirmation evidence and claim boundary 077949e1 Add final confirmation completion checker 1fe05be2 Add resume-supported confirmation batch runner 5dc3e06d Connect confirmation runner to Day-8 waveform engine adapter 72380f44 Add confirmation engine integration audit f9d279c8 Add confirmation job runner skeleton and combiner f6358d0c Add final confirmation job list 724a8b2f Add confirmation result schema and statistical analyzer
