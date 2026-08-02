@@ -69,3 +69,7 @@ external_templates/
 # Local manuscript template files
 manuscript/sn-*.bst
 manuscript/sn-jnl.cls
+
+# Local topology verification scratch files
+scripts/topology_verify/
+validation_data/topology_verify/
