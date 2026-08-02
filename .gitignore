@@ -61,3 +61,7 @@ results/models/
 .env.*
 
 audit/
+
+# Local manuscript/template files - not part of code improvement now
+Download+the+journal+article+template+package+(December+2024+version).zip
+external_templates/
