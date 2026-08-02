@@ -1,0 +1,2 @@
+scenario,stage,seed,symbols,nu,spans,launch_power_dbm,uniform_bmd_rate_bit_per_symbol,pcs_stored_score_bit_per_symbol,entropy_correction_bit_per_symbol,pcs_corrected_bmd_rate_bit_per_symbol,delta_corrected_bmd_gain_bit_per_symbol,ber_uniform,ber_pcs,gsnr_uniform_db,gsnr_pcs_db,notes
+C+S,final_confirmation,31,131072,0.36,12,0,3.589692532,3.616709343,0.02960839165,3.587100951,-0.002591580647,0.02580070496,0.02151298523,12.32794991,12.14801148,day8_waveform_surrogate_confirmation_adapter; C+S uses existing Day-8 two-band surrogate and stress/penalty logic

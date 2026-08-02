@@ -1,0 +1,2 @@
+scenario,stage,seed,symbols,nu,spans,launch_power_dbm,uniform_bmd_rate_bit_per_symbol,pcs_stored_score_bit_per_symbol,entropy_correction_bit_per_symbol,pcs_corrected_bmd_rate_bit_per_symbol,delta_corrected_bmd_gain_bit_per_symbol,ber_uniform,ber_pcs,gsnr_uniform_db,gsnr_pcs_db,notes
+S,final_confirmation,26,131072,0.36,12,-2,3.751730917,3.78587162,0.02960839165,3.756263229,0.004532311505,0.01590538025,0.01222610474,13.45341124,13.3700202,day8_waveform_surrogate_confirmation_adapter

@@ -1,0 +1,4 @@
+scenario,n,mean_gain_bit_per_symbol,ci95_lower_bit_per_symbol,ci95_upper_bit_per_symbol,status,claim_allowed,manuscript_action
+C,30,-0.014480,-0.017386,-0.011574,not_positive,no_confirmed_positive_gain,Report as not positive under independent final confirmation; remove confirmed gain claim.
+C+S,30,0.001546,-0.000687,0.003778,borderline_inconclusive,no_confirmed_positive_gain,Report as borderline/exploratory; do not claim confirmed positive gain.
+S,30,0.000412,-0.001146,0.001969,borderline_inconclusive,no_confirmed_positive_gain,Report as borderline/inconclusive; do not claim confirmed positive gain.
