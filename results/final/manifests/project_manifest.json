@@ -1,16 +1,16 @@
 {
   "manifest_schema": "oescl-final-project-manifest-v1",
-  "generated_utc": "2026-08-02T17:22:46.430098+00:00",
+  "generated_utc": "2026-08-02T17:26:36.996367+00:00",
   "repository": {
-    "git_commit": "10f2ef9291938d1a09c272b66fcfe43713192d9d",
+    "git_commit": "dee4aee480bd249c492a490259491542b0cf84af",
     "git_branch": "improve/milestone-1-reproducibility",
-    "git_status_short": "M scripts/run_day16_gnpy_cs_raman_cases.ps1\n?? manuscript/sn-apacite.bst\n?? manuscript/sn-aps.bst\n?? manuscript/sn-basic.bst\n?? manuscript/sn-chicago.bst\n?? manuscript/sn-jnl.cls\n?? manuscript/sn-mathphys-ay.bst\n?? manuscript/sn-mathphys-num.bst\n?? manuscript/sn-nature.bst\n?? manuscript/sn-vancouver-ay.bst\n?? manuscript/sn-vancouver-num.bst\n?? scripts/final_outputs/generate_project_manifest.py\n?? scripts/topology_verify/\n?? validation_data/day11_gnpy_c10_extra_equipment.json\n?? validation_data/day11_gnpy_c10_network.json\n?? validation_data/day11_gnpy_c10_spectrum.json\n?? validation_data/day11_gnpy_reference_stdout.txt\n?? validation_data/day12_gnpy_c_10span_extra_equipment.json\n?? validation_data/day12_gnpy_c_10span_network.json\n?? validation_data/day12_gnpy_c_10span_spectrum.json\n?? validation_data/day12_gnpy_c_10span_stdout.txt\n?? validation_data/day12_gnpy_c_12span_extra_equipment.json\n?? validation_data/day12_gnpy_c_12span_network.json\n?? validation_data/day12_gnpy_c_12span_spectrum.json\n?? validation_data/day12_gnpy_c_12span_stdout.txt\n?? validation_data/day12_gnpy_c_6span_extra_equipment.json\n?? validation_data/day12_gnpy_c_6span_network.json\n?? validation_data/day12_gnpy_c_6span_spectrum.json\n?? validation_data/day12_gnpy_c_6span_stdout.txt\n?? validation_data/day12_gnpy_c_8span_extra_equipment.json\n?? validation_data/day12_gnpy_c_8span_network.json\n?? validation_data/day12_gnpy_c_8span_spectrum.json\n?? validation_data/day12_gnpy_c_8span_stdout.txt\n?? validation_data/topology_verify/",
+    "git_status_short": "M scripts/final_outputs/check_entropy_corrected_outputs.py\n?? scripts/final_outputs/reproduce_final_outputs.ps1",
     "last_five_commits": [
-      "10f2ef92 Add checker for entropy-corrected final outputs",
-      "d450e2d0 Add entropy-corrected final band result outputs",
-      "2d0db4bf Document Day-16 topology decision and RamanFiber failure",
-      "c8a50cc3 Add Day-16 topology verification configs",
-      "dbdd5236 Ignore local manuscript template artifacts"
+      "dee4aee4 Ignore local Day-11 and Day-12 scratch validation artifacts",
+      "be06d66b Ignore local topology verification scratch artifacts",
+      "39778c22 Ignore local manuscript template files",
+      "03368a1d Add final project manifest and traceability report",
+      "10f2ef92 Add checker for entropy-corrected final outputs"
     ]
   },
   "final_claim_boundaries": {
@@ -199,8 +199,8 @@
     {
       "path": "scripts/final_outputs/check_entropy_corrected_outputs.py",
       "exists": true,
-      "sha256": "33c10e10d36f0b54a8878c1d5e47d10099b56bf70b11bc007762ab81f07eb65b",
-      "size_bytes": 1942
+      "sha256": "8b7b50a4bbd3f3d92be084d445c25c3140e2dc995cf3520a2cec598c77b2c2f0",
+      "size_bytes": 2076
     },
     {
       "path": "results/final/tables/entropy_corrected_band_results.csv",

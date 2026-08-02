@@ -3,7 +3,7 @@
 ## Repository
 
 Branch: improve/milestone-1-reproducibility
-Commit: 10f2ef9291938d1a09c272b66fcfe43713192d9d
+Commit: dee4aee480bd249c492a490259491542b0cf84af
 
 ## Final claim boundaries
 
@@ -54,7 +54,7 @@ Boundary: Band-dependent launch-power calibration; raw direct agreement failed.
 |---|---:|---|
 | src/oescl/final_outputs/entropy_corrected_bmd.py | True | fac6cf76d719dbc3325919668889426b51b4f4c20f350fdd2d16526868141eb7 |
 | scripts/final_outputs/generate_entropy_corrected_band_results.py | True | c452d8f539efdf56f5ad77c052705751d62978b7f6962633855c15616c46a850 |
-| scripts/final_outputs/check_entropy_corrected_outputs.py | True | 33c10e10d36f0b54a8878c1d5e47d10099b56bf70b11bc007762ab81f07eb65b |
+| scripts/final_outputs/check_entropy_corrected_outputs.py | True | 8b7b50a4bbd3f3d92be084d445c25c3140e2dc995cf3520a2cec598c77b2c2f0 |
 | results/final/tables/entropy_corrected_band_results.csv | True | 6e7837e7768a50b99e1fc19deb63b637556edb63fc466ff6ab4b736abec9c468 |
 | results/final/reports/entropy_corrected_band_results_report.md | True | eef2fef0fe7e4782ff53fed219faf78cf4728672e06b397522b18ddbbecdcacf |
 | validation_data/gnpy_day16_cs_raman_reference.csv | True | e5f8182780fb329319f824273401756be9472748cc1bf4c8638e6c167e44193c |

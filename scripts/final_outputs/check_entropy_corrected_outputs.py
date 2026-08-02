@@ -37,16 +37,20 @@ def main() -> None:
         corrected = float(row["corrected_bmd_gain_bit_per_symbol"])
         rate = float(row["rate_gain_gbps_per_representative_channel"])
 
-        if not approx_equal(corrected, expected["corrected"]):
-            raise AssertionError(f"{scenario} corrected BMD mismatch: {corrected} != {expected["corrected"]}")
+        expected_corrected = expected["corrected"]
+        expected_rate = expected["rate"]
 
-        if not approx_equal(rate, expected["rate"]):
-            raise AssertionError(f"{scenario} rate mismatch: {rate} != {expected["rate"]}")
+        if not approx_equal(corrected, expected_corrected):
+            raise AssertionError(f"{scenario} corrected BMD mismatch: {corrected} != {expected_corrected}")
+
+        if not approx_equal(rate, expected_rate):
+            raise AssertionError(f"{scenario} rate mismatch: {rate} != {expected_rate}")
 
         if "aggregate" in expected:
             aggregate = float(row["aggregate_rate_gain_gbps"])
-            if not approx_equal(aggregate, expected["aggregate"]):
-                raise AssertionError(f"{scenario} aggregate mismatch: {aggregate} != {expected["aggregate"]}")
+            expected_aggregate = expected["aggregate"]
+            if not approx_equal(aggregate, expected_aggregate):
+                raise AssertionError(f"{scenario} aggregate mismatch: {aggregate} != {expected_aggregate}")
 
     print("PASS: entropy-corrected final C/S/C+S outputs match expected publication-facing values.")
 
